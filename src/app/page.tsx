@@ -161,7 +161,7 @@ export default function Home() {
               variants={fadeUp}
               className="text-[clamp(18px,2vw,26px)] text-[#007aff] font-semibold italic pt-2"
             >
-              The future. Engineered at silicon speed.
+              The future. Built at silicon speed.
             </motion.p>
           </motion.div>
         </div>
