@@ -39,17 +39,14 @@ export default function Contact() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-[1400px] mx-auto px-[6%]">
           <div className="flex items-center justify-between h-[72px]">
-            <Link href="/" className="flex flex-col">
+            <Link href="/" className="flex items-center">
               <Image
                 src="/logo-celton.png"
                 alt="Celton Semiconductors"
-                width={160}
-                height={48}
-                className="h-10 w-auto"
+                width={240}
+                height={72}
+                className="h-14 w-auto"
               />
-              <span className="text-[11px] text-[#86868b] tracking-[2px] uppercase mt-0.5">
-                Architecting the Future
-              </span>
             </Link>
             <div className="hidden md:flex items-center gap-11">
               <Link href="/products" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
@@ -58,6 +55,10 @@ export default function Contact() {
               </Link>
               <Link href="/about" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
                 About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
+              </Link>
+              <Link href="/careers" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
+                Careers
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
               <Link href="/contact" className="text-[#007aff] text-sm relative group">
@@ -236,11 +237,11 @@ export default function Contact() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 border-t border-celton-silver/10 mt-16">
+      <footer className="py-12 border-t border-celton-silver/10 mt-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-celton-silver text-sm">
-              © 2025 Celton Semiconductors. All rights reserved.
+              © 2026 Celton Semiconductors. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link href="/privacy" className="text-celton-silver hover:text-celton-light text-sm transition-colors">Privacy</Link>

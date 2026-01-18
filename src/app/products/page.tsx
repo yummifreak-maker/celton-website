@@ -25,17 +25,14 @@ export default function Products() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-[1400px] mx-auto px-[6%]">
           <div className="flex items-center justify-between h-[72px]">
-            <Link href="/" className="flex flex-col">
+            <Link href="/" className="flex items-center">
               <Image
                 src="/logo-celton.png"
                 alt="Celton Semiconductors"
-                width={160}
-                height={48}
-                className="h-10 w-auto"
+                width={240}
+                height={72}
+                className="h-14 w-auto"
               />
-              <span className="text-[11px] text-[#86868b] tracking-[2px] uppercase mt-0.5">
-                Architecting the Future
-              </span>
             </Link>
             <div className="hidden md:flex items-center gap-11">
               <Link href="/products" className="text-[#007aff] text-sm relative group">
@@ -44,6 +41,10 @@ export default function Products() {
               </Link>
               <Link href="/about" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
                 About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
+              </Link>
+              <Link href="/careers" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
+                Careers
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
               <Link href="/contact" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
@@ -426,26 +427,9 @@ export default function Products() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 border-t border-white/[0.05] bg-black">
+      <footer className="py-12 border-t border-white/[0.05] bg-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div className="md:col-span-2">
-              <div className="flex flex-col mb-6">
-                <Image
-                  src="/logo-celton.png"
-                  alt="Celton Semiconductors"
-                  width={160}
-                  height={48}
-                  className="h-10 w-auto"
-                />
-                <span className="text-[11px] text-[#86868b] tracking-[2px] uppercase mt-1">
-                  Architecting the Future
-                </span>
-              </div>
-              <p className="text-[#86868b] max-w-md leading-relaxed">
-                AI and VLSI converge to redefine semiconductor innovation—architected into every layer, every workflow, every chip we create.
-              </p>
-            </div>
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div>
               <p className="text-[#f5f5f7] font-medium mb-4">The Triad</p>
               <ul className="space-y-3">
@@ -458,20 +442,23 @@ export default function Products() {
               <p className="text-[#f5f5f7] font-medium mb-4">Company</p>
               <ul className="space-y-3">
                 <li><Link href="/about" className="text-[#86868b] hover:text-[#007aff] transition-colors">About</Link></li>
-                <li><Link href="/contact" className="text-[#86868b] hover:text-[#007aff] transition-colors">Contact</Link></li>
                 <li><Link href="/careers" className="text-[#86868b] hover:text-[#007aff] transition-colors">Careers</Link></li>
+                <li><Link href="/contact" className="text-[#86868b] hover:text-[#007aff] transition-colors">Contact</Link></li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-[#f5f5f7] font-medium mb-4">Legal</p>
+              <ul className="space-y-3">
+                <li><Link href="/privacy" className="text-[#86868b] hover:text-[#007aff] transition-colors">Privacy</Link></li>
+                <li><Link href="/terms" className="text-[#86868b] hover:text-[#007aff] transition-colors">Terms</Link></li>
               </ul>
             </div>
           </div>
           <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-center">
             <p className="text-[#86868b] text-sm">
-              © 2025 Celton Semiconductors. All rights reserved.
+              © 2026 Celton Semiconductors. All rights reserved.
             </p>
-            <div className="flex gap-6">
-              <Link href="/privacy" className="text-[#86868b] hover:text-[#007aff] text-sm transition-colors">Privacy</Link>
-              <Link href="/terms" className="text-[#86868b] hover:text-[#007aff] text-sm transition-colors">Terms</Link>
-            </div>
           </div>
         </div>
       </footer>
