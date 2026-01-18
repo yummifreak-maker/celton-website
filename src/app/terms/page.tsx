@@ -28,14 +28,14 @@ export default function Terms() {
               <Image
                 src="/logo-celton.png"
                 alt="Celton Semiconductors"
-                width={240}
-                height={72}
-                className="h-14 w-auto"
+                width={280}
+                height={84}
+                className="h-16 w-auto"
               />
             </Link>
             <div className="hidden md:flex items-center gap-11">
               <Link href="/products" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
-                The Celton Triad
+                Innovations
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
               <Link href="/about" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">

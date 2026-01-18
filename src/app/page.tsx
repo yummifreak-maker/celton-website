@@ -29,14 +29,14 @@ export default function Home() {
               <Image
                 src="/logo-celton.png"
                 alt="Celton Semiconductors"
-                width={240}
-                height={72}
-                className="h-14 w-auto"
+                width={280}
+                height={84}
+                className="h-16 w-auto"
               />
             </Link>
             <div className="hidden md:flex items-center gap-11">
               <Link href="/products" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
-                The Celton Triad
+                Innovations
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
               <Link href="/about" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
@@ -118,14 +118,14 @@ export default function Home() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#007aff] text-[clamp(15px,1.4vw,18px)] tracking-[5px] font-semibold uppercase"
+              className="text-[#007aff] text-[clamp(15px,1.4vw,18px)] tracking-[4px] font-semibold"
             >
               Introducing the Celton Triad
             </motion.p>
 
             <motion.h1
               variants={fadeUp}
-              className="text-[clamp(48px,7vw,100px)] font-extrabold leading-[1.05] tracking-[-1px] bg-gradient-to-b from-white to-[#8b8b8d] bg-clip-text text-transparent"
+              className="text-[clamp(48px,7vw,100px)] font-extrabold leading-[1.1] tracking-[0px] bg-gradient-to-b from-white to-[#8b8b8d] bg-clip-text text-transparent"
             >
               Intelligence.
               <br />
@@ -134,9 +134,9 @@ export default function Home() {
 
             <motion.p
               variants={fadeUp}
-              className="text-[clamp(16px,1.5vw,20px)] text-[#a1a1a6] max-w-[900px] mx-auto leading-relaxed"
+              className="text-[clamp(15px,1.3vw,18px)] text-[#a1a1a6] max-w-[700px] mx-auto leading-relaxed"
             >
-              Where AI, deep technology, and VLSI converge, the future of silicon evolves. Intelligence isn&apos;t layered on — it&apos;s intrinsic to everything we build, from a cognitive learning platform and a silicon design engine to next-gen energy-efficient chips.
+              AI-powered platforms for learning, designing, and building the next generation of semiconductors.
             </motion.p>
 
             <motion.div
