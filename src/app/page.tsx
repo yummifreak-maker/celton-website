@@ -136,7 +136,7 @@ export default function Home() {
               variants={fadeUp}
               className="text-[clamp(16px,1.4vw,20px)] text-[#a1a1a6] max-w-[900px] mx-auto leading-relaxed"
             >
-              Where AI, deep technology, and VLSI converge, the future of silicon evolves. Intelligence isn&apos;t layered on — it&apos;s intrinsic to everything we build, from a cognitive learning platform and a silicon design engine to next-gen energy-efficient chips.
+              Where AI, deeptech, and VLSI converge, the future of silicon evolves. Intelligence isn&apos;t layered on — it&apos;s intrinsic to everything we build, from a cognitive learning platform and a silicon design engine to next-gen energy-efficient chips.
             </motion.p>
 
             <motion.div
