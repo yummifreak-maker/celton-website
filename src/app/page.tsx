@@ -57,9 +57,9 @@ export default function Home() {
       </nav>
 
       {/* Hero Section - Full Height, No Scroll */}
-      <section className="h-screen flex flex-col justify-center items-center text-center px-[5%] relative overflow-hidden">
+      <section className="h-screen flex flex-col justify-center px-[6%] relative overflow-hidden">
         {/* Animated Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(0,122,255,0.15),transparent),radial-gradient(ellipse_60%_40%_at_80%_60%,rgba(147,51,234,0.1),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_30%_40%,rgba(0,122,255,0.15),transparent),radial-gradient(ellipse_60%_40%_at_80%_60%,rgba(147,51,234,0.1),transparent)]" />
 
         {/* Circuit Lines Animation */}
         <div className="absolute inset-0 opacity-[0.03]">
@@ -109,23 +109,23 @@ export default function Home() {
           transition={{ duration: 12, repeat: Infinity, direction: 'reverse' }}
         />
 
-        <div className="relative z-10 max-w-[1200px]">
+        <div className="relative z-10 max-w-[1400px] w-full">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={stagger}
-            className="space-y-6"
+            className="space-y-8"
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#007aff] text-[clamp(15px,1.4vw,18px)] tracking-[4px] font-semibold"
+              className="text-[#007aff] text-[clamp(14px,1.2vw,16px)] tracking-[4px] font-semibold"
             >
               Introducing the Celton Triad
             </motion.p>
 
             <motion.h1
               variants={fadeUp}
-              className="text-[clamp(48px,7vw,100px)] font-extrabold leading-[1.1] tracking-[0px] bg-gradient-to-b from-white to-[#8b8b8d] bg-clip-text text-transparent"
+              className="text-[clamp(52px,8vw,120px)] font-extrabold leading-[1.05] tracking-[-2px] bg-gradient-to-b from-white to-[#8b8b8d] bg-clip-text text-transparent"
             >
               Intelligence.
               <br />
@@ -134,14 +134,14 @@ export default function Home() {
 
             <motion.p
               variants={fadeUp}
-              className="text-[clamp(15px,1.3vw,18px)] text-[#a1a1a6] max-w-[700px] mx-auto leading-relaxed"
+              className="text-[clamp(16px,1.5vw,21px)] text-[#a1a1a6] max-w-[800px] leading-relaxed"
             >
-              AI-powered platforms for learning, designing, and building the next generation of semiconductors.
+              Where AI, deep technology, and VLSI converge, the future of silicon evolves. Intelligence isn&apos;t layered on — it&apos;s intrinsic to everything we build, from a cognitive learning platform and a silicon design engine to next-gen energy-efficient chips.
             </motion.p>
 
             <motion.div
               variants={fadeUp}
-              className="flex flex-wrap gap-5 justify-center pt-2"
+              className="flex flex-wrap gap-5 pt-4"
             >
               <Link
                 href="/products"
@@ -159,7 +159,7 @@ export default function Home() {
 
             <motion.p
               variants={fadeUp}
-              className="text-[clamp(18px,2vw,26px)] text-[#007aff] font-semibold italic pt-2"
+              className="text-[clamp(20px,2.5vw,32px)] text-[#007aff] font-semibold italic pt-4"
             >
               The future. Built at silicon speed.
             </motion.p>
