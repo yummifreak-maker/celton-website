@@ -2,8 +2,8 @@
 
 ## Project Overview
 **Company**: Celton Semiconductors
-**Tagline**: "Architecting the Future"
-**Version**: v0.0.2
+**Tagline**: "Architecting Intelligence"
+**Version**: v0.0.1
 **Location**: `D:\users\r!\celton-website`
 
 ## Brand Identity
@@ -52,12 +52,12 @@ gray: #a1a1a6           /* Muted text */
 
 ```
 /                   # Homepage - Hero only (no scrolling)
-/products           # The Celton Triad - All three products
+/products           # The Celton Triad - All three products (Innovations)
 /about              # Company vision, philosophy, values
 /contact            # Contact form, email addresses
-/careers            # (Future) Job listings
-/privacy            # (Future) Privacy policy
-/terms              # (Future) Terms of service
+/careers            # Job listings and company culture
+/privacy            # Privacy policy
+/terms              # Terms of service
 ```
 
 ## Running the Project
@@ -72,18 +72,28 @@ Access at: http://localhost:3000
 
 ## Key Design Decisions
 
-1. **No scrolling on homepage** - Each section is a separate page
+1. **No scrolling on homepage** - Full-screen hero, each section is a separate page
 2. **Apple-inspired aesthetics** - Minimal, premium, elegant
 3. **Dark mode first** - Sophisticated tech feel
 4. **Subtle animations** - Framer Motion for reveals
 5. **Responsive** - Mobile-first design approach
+6. **Wide layout** - max-w-[1800px] for better screen utilization
 
 ## Content Highlights
 
 ### Hero Section
-- "Architected intelligence into silicon."
-- "From the atom up. From inception forward."
-- CTA: "Explore The Triad"
+- "Introducing the Celton Triad"
+- "Intelligence. Engineered into silicon."
+- Description: AI, deeptech, and VLSI convergence
+- CTA: "Discover The Triad" / "Collaborate with Us"
+- Tagline: "The future. Built now."
+
+### Navigation
+- Logo (Celton with brain/circuit icon)
+- Innovations (links to /products)
+- About
+- Careers
+- Contact
 
 ### Product Positioning
 - Cognorus: Learn semiconductors the way you think
@@ -93,30 +103,34 @@ Access at: http://localhost:3000
 ## Git Repository
 
 **Repository**: https://github.com/yummifreak-maker/celton-website
-**Branch**: main
+**Branch**: v0.0.7a
 
 ## Changelog
 
-### v0.0.2 (Current)
-- Restructured site: Each section is now a separate page (no scrolling)
-- Created /products page for The Celton Triad
-- Fixed hero: "intelligence" moved to second line
-- Reduced word repetition across pages
-- Updated navigation: Home, The Celton Triad, About, Contact
-- Changed tagline to "Architecting the Future"
-
-### v0.0.1
-- Updated branding: "Architecting Intelligence" tagline
-- Changed "Convergence" to "Triad" throughout
-- Added animated circuit lines, floating particles, pulsing orbs
-- Product taglines: Cognorus "Adaptive • Yours", Nexarus "Designed to Flow", Helorus "Power • Perfected"
+### v0.0.1 (Current)
+- Updated logo to new red brain/circuit design with "Architecting Intelligence"
+- Changed nav "The Celton Triad" to "Innovations"
+- Updated hero text: "Introducing the Celton Triad" (normal case, not uppercase)
+- Fixed 'g' cutoff in "Engineered" with tracking-[1px]
+- Made logo bigger (h-16, 280px width)
+- Shortened description to two lines
+- Changed "deep technology" to "deeptech"
+- Updated tagline: "The future. Built now."
+- Widened layout containers to max-w-[1800px] with 4% padding
+- Added Careers page with job listings
+- Added Privacy Policy page
+- Added Terms of Service page
 
 ### v0.0.0
 - Initial project structure with Next.js 14, TypeScript, TailwindCSS
 - Premium dark theme with Celton color palette
-- Homepage, About page, Contact page
-- Framer Motion animations, responsive design
+- Homepage with full-screen hero section
+- Products page (The Celton Triad)
+- About page with vision, philosophy, values
+- Contact page with form
+- Framer Motion animations
+- Responsive design
 
 ---
 
-**Last Updated**: v0.0.2
+**Last Updated**: v0.0.1

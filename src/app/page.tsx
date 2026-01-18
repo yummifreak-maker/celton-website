@@ -23,7 +23,7 @@ export default function Home() {
     <main className="h-screen bg-black overflow-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl border-b border-white/5">
-        <div className="max-w-[1400px] mx-auto px-[6%]">
+        <div className="max-w-[1800px] mx-auto px-[4%]">
           <div className="flex items-center justify-between h-[72px]">
             <Link href="/" className="flex items-center">
               <Image
@@ -57,7 +57,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section - Full Height, No Scroll */}
-      <section className="h-screen flex flex-col justify-center items-center text-center px-[6%] relative overflow-hidden">
+      <section className="h-screen flex flex-col justify-center items-center text-center px-[4%] relative overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(0,122,255,0.15),transparent),radial-gradient(ellipse_60%_40%_at_80%_60%,rgba(147,51,234,0.1),transparent)]" />
 
@@ -109,7 +109,7 @@ export default function Home() {
           transition={{ duration: 12, repeat: Infinity, direction: 'reverse' }}
         />
 
-        <div className="relative z-10 max-w-[1400px]">
+        <div className="relative z-10 max-w-[1800px] w-full">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -134,11 +134,11 @@ export default function Home() {
 
             <motion.p
               variants={fadeUp}
-              className="text-[clamp(16px,1.4vw,20px)] text-[#a1a1a6] max-w-[1100px] mx-auto leading-relaxed"
+              className="text-[clamp(16px,1.4vw,20px)] text-[#a1a1a6] max-w-[1300px] mx-auto leading-relaxed"
             >
               Where AI, deeptech, and VLSI converge, the future of silicon evolves. Intelligence isn&apos;t layered on —
               <br />
-              it&apos;s intrinsic to everything we build, from a cognitive learning platform and a silicon design engine to next-gen energy-efficient chips.
+              it&apos;s intrinsic to everything we build, from a cognitive learning platform and a design engine to next-gen energy chips.
             </motion.p>
 
             <motion.div
@@ -163,14 +163,14 @@ export default function Home() {
               variants={fadeUp}
               className="text-[clamp(18px,2vw,26px)] text-[#007aff] font-semibold italic pt-2"
             >
-              The future. Built at silicon speed.
+              The future. Built now.
             </motion.p>
           </motion.div>
         </div>
 
         {/* Footer - Positioned at bottom */}
         <div className="absolute bottom-0 left-0 right-0 py-6 border-t border-white/[0.05]">
-          <div className="max-w-[1400px] mx-auto px-[6%]">
+          <div className="max-w-[1800px] mx-auto px-[4%]">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-[#86868b] text-sm">
                 © 2026 Celton Semiconductors. All rights reserved.

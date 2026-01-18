@@ -1,30 +1,28 @@
 # Celton Website Development Plan
 
-## Version: v0.0.2
+## Version: v0.0.1
 
-## Project Status: Restructured Release
-
-### Completed (v0.0.2)
-- [x] Restructured site - each section is now a separate page
-- [x] Created /products page for The Celton Triad
-- [x] Homepage: Hero section only (no scrolling)
-- [x] Fixed hero: "Architected / intelligence / into silicon."
-- [x] Reduced repetition of "intelligence" across pages
-- [x] Updated navigation: Home, The Celton Triad, About, Contact
-- [x] Changed tagline to "Architecting the Future"
-- [x] Consistent navigation across all pages
+## Project Status: Initial Release
 
 ### Completed (v0.0.1)
-- [x] Updated branding to "Architecting Intelligence"
-- [x] Changed "Convergence" to "Triad" throughout site
-- [x] Added animated circuit lines and floating particles
-- [x] Added pulsing orb backgrounds
-- [x] Product taglines: Cognorus "Adaptive • Yours", Nexarus "Designed to Flow", Helorus "Power • Perfected"
+- [x] Updated logo to new red brain/circuit design with "Architecting Intelligence"
+- [x] Changed nav "The Celton Triad" to "Innovations"
+- [x] Updated hero text: "Introducing the Celton Triad" (normal case)
+- [x] Fixed 'g' cutoff in "Engineered" with tracking-[1px]
+- [x] Made logo bigger (h-16, 280px width)
+- [x] Shortened description to two lines
+- [x] Changed "deep technology" to "deeptech"
+- [x] Updated tagline: "The future. Built now."
+- [x] Widened layout containers to max-w-[1800px] with 4% padding
+- [x] Added Careers page with job listings
+- [x] Added Privacy Policy page
+- [x] Added Terms of Service page
 
 ### Completed (v0.0.0)
 - [x] Project structure setup (Next.js 14, TypeScript, TailwindCSS)
 - [x] Premium dark theme with Celton color palette
-- [x] Homepage with hero section
+- [x] Homepage with full-screen hero section (no scrolling)
+- [x] Products page (The Celton Triad)
 - [x] About page with vision, philosophy, and values
 - [x] Contact page with form and contact information
 - [x] Framer Motion animations
@@ -33,11 +31,10 @@
 ### Pending (Future Versions)
 
 #### v0.1.0 - Content Enhancement
-- [ ] Careers page with job listings
 - [ ] Individual product landing pages (/cognorus, /nexarus, /helorus)
-- [ ] Privacy policy page
-- [ ] Terms of service page
 - [ ] Blog/News section
+- [ ] Team/Leadership section on About page
+- [ ] More detailed job descriptions on Careers page
 
 #### v0.2.0 - Functionality
 - [ ] Contact form backend integration
@@ -65,14 +62,17 @@ celton-website/
 ├── src/
 │   ├── app/
 │   │   ├── page.tsx          # Homepage (Hero only)
-│   │   ├── products/page.tsx # The Celton Triad
+│   │   ├── products/page.tsx # The Celton Triad (Innovations)
 │   │   ├── about/page.tsx    # About page
 │   │   ├── contact/page.tsx  # Contact page
+│   │   ├── careers/page.tsx  # Careers page
+│   │   ├── privacy/page.tsx  # Privacy policy
+│   │   ├── terms/page.tsx    # Terms of service
 │   │   ├── layout.tsx        # Root layout
 │   │   └── globals.css       # Global styles
 │   └── components/           # Reusable components (future)
 ├── public/
-│   ├── logo-celton.png       # Company logo
+│   ├── logo-celton.png       # Company logo (red brain/circuit)
 │   ├── logo-cognorus.png     # Cognorus product logo
 │   ├── logo-nexarus.png      # Nexarus product logo
 │   └── logo-helorus.png      # Helorus product logo
@@ -83,22 +83,25 @@ celton-website/
 
 ## Design Decisions
 
-1. **No scrolling on homepage**: Each section is a separate page
+1. **No scrolling on homepage**: Full-screen hero, each section is a separate page
 2. **Framework**: Next.js 14 for performance, SEO, and modern React features
 3. **Styling**: TailwindCSS for rapid development and consistent design
 4. **Animations**: Framer Motion for smooth, professional animations
 5. **Theme**: Dark-first design reflecting premium tech positioning
 6. **Typography**: Inter font family for clean, modern readability
+7. **Wide layout**: max-w-[1800px] containers with 4% padding for better screen utilization
 
 ## Brand Guidelines
 
 - **Primary Color**: #007aff (Apple blue) - Used for accents and CTAs
 - **Tone**: Premium, refined, Apple-like elegance
 - **Copy Style**: Concise, impactful, benefit-focused
-- **Tagline**: "Architecting the Future"
+- **Tagline**: "Architecting Intelligence"
+- **Hero Tagline**: "The future. Built now."
 
 ## Notes
 
 - All products marked as "Coming Soon" until launch dates confirmed
 - Contact emails are placeholders (hello@celton.ai, partners@celton.ai, careers@celton.ai)
 - Social media links are placeholders pending account creation
+- Logo updated to red brain/circuit design with "ARCHITECTING INTELLIGENCE" text
