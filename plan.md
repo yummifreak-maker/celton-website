@@ -1,29 +1,34 @@
 # Celton Website Development Plan
 
-## Version: v0.0.1
+## Version: v0.0.2
 
-## Project Status: Enhanced Design Release
+## Project Status: Restructured Release
+
+### Completed (v0.0.2)
+- [x] Restructured site - each section is now a separate page
+- [x] Created /products page for The Celton Triad
+- [x] Homepage: Hero section only (no scrolling)
+- [x] Fixed hero: "Architected / intelligence / into silicon."
+- [x] Reduced repetition of "intelligence" across pages
+- [x] Updated navigation: Home, The Celton Triad, About, Contact
+- [x] Changed tagline to "Architecting the Future"
+- [x] Consistent navigation across all pages
 
 ### Completed (v0.0.1)
 - [x] Updated branding to "Architecting Intelligence"
 - [x] Changed "Convergence" to "Triad" throughout site
-- [x] New hero section: "Intelligence architected into silicon."
 - [x] Added animated circuit lines and floating particles
 - [x] Added pulsing orb backgrounds
 - [x] Product taglines: Cognorus "Adaptive • Yours", Nexarus "Designed to Flow", Helorus "Power • Perfected"
-- [x] Enhanced deep-dive sections with visual backgrounds
-- [x] Value proposition section with hover effects
-- [x] Footer CTA: "The future is architected."
 
 ### Completed (v0.0.0)
 - [x] Project structure setup (Next.js 14, TypeScript, TailwindCSS)
 - [x] Premium dark theme with Celton color palette
-- [x] Homepage with hero, Convergence section, product deep-dives
+- [x] Homepage with hero section
 - [x] About page with vision, philosophy, and values
 - [x] Contact page with form and contact information
 - [x] Framer Motion animations
 - [x] Responsive design (mobile-first)
-- [x] Logo integration points for all brands
 
 ### Pending (Future Versions)
 
@@ -59,7 +64,8 @@
 celton-website/
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx          # Homepage
+│   │   ├── page.tsx          # Homepage (Hero only)
+│   │   ├── products/page.tsx # The Celton Triad
 │   │   ├── about/page.tsx    # About page
 │   │   ├── contact/page.tsx  # Contact page
 │   │   ├── layout.tsx        # Root layout
@@ -77,18 +83,19 @@ celton-website/
 
 ## Design Decisions
 
-1. **Framework**: Next.js 14 for performance, SEO, and modern React features
-2. **Styling**: TailwindCSS for rapid development and consistent design
-3. **Animations**: Framer Motion for smooth, professional animations
-4. **Theme**: Dark-first design reflecting premium tech positioning
-5. **Typography**: Inter font family for clean, modern readability
+1. **No scrolling on homepage**: Each section is a separate page
+2. **Framework**: Next.js 14 for performance, SEO, and modern React features
+3. **Styling**: TailwindCSS for rapid development and consistent design
+4. **Animations**: Framer Motion for smooth, professional animations
+5. **Theme**: Dark-first design reflecting premium tech positioning
+6. **Typography**: Inter font family for clean, modern readability
 
 ## Brand Guidelines
 
-- **Primary Color**: celton-accent (#2997ff) - Used for Cognorus and primary CTAs
-- **Secondary Color**: celton-gold (#c9a962) - Used for Nexarus accent
+- **Primary Color**: #007aff (Apple blue) - Used for accents and CTAs
 - **Tone**: Premium, refined, Apple-like elegance
 - **Copy Style**: Concise, impactful, benefit-focused
+- **Tagline**: "Architecting the Future"
 
 ## Notes
 

@@ -2,69 +2,57 @@
 
 ## Project Overview
 **Company**: Celton Semiconductors
-**Tagline**: "Architecting Intelligence"
-**Version**: v0.0.1
+**Tagline**: "Architecting the Future"
+**Version**: v0.0.2
 **Location**: `D:\users\r!\celton-website`
 
 ## Brand Identity
 
 ### The Celton Triad
-Three intelligent platforms forming one unified ecosystem:
+Three platforms forming one unified ecosystem:
 
 1. **Cognorus.ai** - Cognitive Learning Platform
    - AI-powered personalized semiconductor education
-   - Target: Students, fresh graduates, career switchers, VLSI professionals
-   - Markets: India, USA, Middle East, Europe, UK, Southeast Asia
+   - Tagline: "Adaptive • Yours"
 
-2. **Nexarus.ai** - Design Intelligence Platform
+2. **Nexarus.ai** - Design Platform
    - AI-assisted chip design from concept to GDS
-   - Target: Product companies, design houses, universities
-   - Features: Natural language to RTL, automated verification, AI-optimized PD
+   - Tagline: "Designed to Flow"
 
-3. **Helorus.ai** - Intelligent Chip Development
+3. **Helorus.ai** - Chip Development
    - Internal chip development for power electronics
-   - AI-driven performance optimization
-   - Focus: Energy-efficient silicon solutions
+   - Tagline: "Power • Perfected"
 
 ### Brand Positioning
 - **Tone**: Premium & Refined (Apple-like elegance)
 - **Focus**: Company and products (not individual leadership)
 - **Geography**: Global company (location de-emphasized)
-- **Differentiator**: AI integrated at every level, not as an afterthought
+- **Differentiator**: AI integrated at every level
 
 ## Technology Stack
 
 - **Framework**: Next.js 14 with App Router
 - **Language**: TypeScript
-- **Styling**: TailwindCSS with custom Celton theme
+- **Styling**: TailwindCSS with custom theme
 - **Animations**: Framer Motion
 - **Fonts**: Inter (Google Fonts)
 
 ## Color Palette
 
 ```css
-celton-black: #0a0a0a    /* Primary background */
-celton-dark: #141414     /* Secondary background */
-celton-gray: #1d1d1f     /* Card backgrounds */
-celton-silver: #86868b   /* Secondary text */
-celton-light: #f5f5f7    /* Primary text */
-celton-white: #fbfbfd    /* Bright elements */
-celton-accent: #2997ff   /* Cognorus/Primary accent */
-celton-gold: #c9a962     /* Nexarus accent */
+black: #000000          /* Primary background */
+dark: #0a0a0f           /* Secondary background */
+accent: #007aff         /* Primary accent (Apple blue) */
+light: #f5f5f7          /* Primary text */
+silver: #86868b         /* Secondary text */
+gray: #a1a1a6           /* Muted text */
 ```
-
-## Logo Files
-
-Place in `public/` folder:
-- `logo-celton.png` - Company logo
-- `logo-cognorus.png` - Cognorus.ai product logo
-- `logo-nexarus.png` - Nexarus.ai product logo
-- `logo-helorus.png` - Helorus.ai product logo
 
 ## Page Structure
 
 ```
-/                   # Homepage - Hero, Convergence, Product sections
+/                   # Homepage - Hero only (no scrolling)
+/products           # The Celton Triad - All three products
 /about              # Company vision, philosophy, values
 /contact            # Contact form, email addresses
 /careers            # (Future) Job listings
@@ -84,31 +72,23 @@ Access at: http://localhost:3000
 
 ## Key Design Decisions
 
-1. **Apple-inspired aesthetics**: Minimal, premium, elegant
-2. **Dark mode first**: Sophisticated tech feel
-3. **Subtle animations**: Framer Motion for scroll reveals
-4. **Responsive**: Mobile-first design approach
-5. **Performance**: Next.js Image optimization, minimal dependencies
+1. **No scrolling on homepage** - Each section is a separate page
+2. **Apple-inspired aesthetics** - Minimal, premium, elegant
+3. **Dark mode first** - Sophisticated tech feel
+4. **Subtle animations** - Framer Motion for reveals
+5. **Responsive** - Mobile-first design approach
 
 ## Content Highlights
 
 ### Hero Section
-"Intelligence at the Core"
-"Where VLSI and AI converge to create chips that learn, adapt, and optimize in real time."
+- "Architected intelligence into silicon."
+- "From the atom up. From inception forward."
+- CTA: "Explore The Triad"
 
 ### Product Positioning
-- Cognorus: "Learn" - Democratizing semiconductor education
-- Nexarus: "Design" - From idea to GDS intelligently
-- Helorus: "Build" - Silicon that thinks ahead
-
-### Key Messages
-- "Unlike others who treat AI as an afterthought, Celton integrates intelligence at every level"
-- "Three platforms. One unified intelligence."
-- "The future of semiconductor is intelligent."
-
-## Status
-
-All products currently marked as "Coming Soon" / "In Development"
+- Cognorus: Learn semiconductors the way you think
+- Nexarus: From concept to silicon. In hours.
+- Helorus: Silicon that thinks ahead
 
 ## Git Repository
 
@@ -117,27 +97,26 @@ All products currently marked as "Coming Soon" / "In Development"
 
 ## Changelog
 
-### v0.0.1 (Enhanced Design)
+### v0.0.2 (Current)
+- Restructured site: Each section is now a separate page (no scrolling)
+- Created /products page for The Celton Triad
+- Fixed hero: "intelligence" moved to second line
+- Reduced word repetition across pages
+- Updated navigation: Home, The Celton Triad, About, Contact
+- Changed tagline to "Architecting the Future"
+
+### v0.0.1
 - Updated branding: "Architecting Intelligence" tagline
 - Changed "Convergence" to "Triad" throughout
-- New hero: "Intelligence architected into silicon."
 - Added animated circuit lines, floating particles, pulsing orbs
 - Product taglines: Cognorus "Adaptive • Yours", Nexarus "Designed to Flow", Helorus "Power • Perfected"
-- Enhanced deep-dive sections with DNA helix backgrounds
-- Value proposition section with hover effects
-- Footer CTA: "The future is architected."
 
-### v0.0.0 (Initial Release)
-- Created project structure with Next.js 14, TypeScript, TailwindCSS
-- Implemented premium dark theme with Celton color palette
-- Built homepage with hero section, The Celton Triad, product deep-dives
-- Created About page with company vision, philosophy, and values
-- Created Contact page with form and contact information
-- Added Framer Motion animations for scroll reveals
-- Responsive design for all screen sizes
-- Logo integration points for all four brand logos
+### v0.0.0
+- Initial project structure with Next.js 14, TypeScript, TailwindCSS
+- Premium dark theme with Celton color palette
+- Homepage, About page, Contact page
+- Framer Motion animations, responsive design
 
 ---
 
-**Last Updated**: v0.0.1
-**Next Steps**: Add careers page, implement form submission, add product-specific pages
+**Last Updated**: v0.0.2

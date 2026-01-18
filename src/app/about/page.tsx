@@ -21,38 +21,35 @@ export default function About() {
   return (
     <main className="min-h-screen bg-celton-black">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-celton-black/80 backdrop-blur-xl border-b border-celton-silver/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center gap-3">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl border-b border-white/5">
+        <div className="max-w-[1400px] mx-auto px-[6%]">
+          <div className="flex items-center justify-between h-[72px]">
+            <Link href="/" className="flex flex-col">
               <Image
                 src="/logo-celton.png"
                 alt="Celton Semiconductors"
-                width={140}
-                height={40}
-                className="h-8 w-auto"
+                width={160}
+                height={48}
+                className="h-10 w-auto"
               />
+              <span className="text-[11px] text-[#86868b] tracking-[2px] uppercase mt-0.5">
+                Architecting the Future
+              </span>
             </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/#convergence" className="text-celton-silver hover:text-celton-light transition-colors text-sm">
-                The Convergence
+            <div className="hidden md:flex items-center gap-11">
+              <Link href="/products" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
+                The Celton Triad
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
-              <Link href="/#cognorus" className="text-celton-silver hover:text-celton-light transition-colors text-sm">
-                Cognorus
-              </Link>
-              <Link href="/#nexarus" className="text-celton-silver hover:text-celton-light transition-colors text-sm">
-                Nexarus
-              </Link>
-              <Link href="/#helorus" className="text-celton-silver hover:text-celton-light transition-colors text-sm">
-                Helorus
-              </Link>
-              <Link href="/about" className="text-celton-light text-sm">
+              <Link href="/about" className="text-[#007aff] text-sm relative group">
                 About
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#007aff]" />
+              </Link>
+              <Link href="/contact" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
+                Contact
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
             </div>
-            <Link href="/contact" className="btn-secondary text-sm py-2 px-5">
-              Get in Touch
-            </Link>
           </div>
         </div>
       </nav>
