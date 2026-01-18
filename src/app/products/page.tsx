@@ -100,11 +100,11 @@ export default function Products() {
             <div className="absolute inset-0 bg-gradient-to-br from-[#007aff]/[0.08] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
               <motion.div
-                className="w-[70px] h-[70px] bg-gradient-to-br from-[#007aff] to-[#0051d5] rounded-[18px] flex items-center justify-center text-[32px] mb-7 shadow-[0_10px_30px_rgba(0,122,255,0.3)]"
+                className="mb-7"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                🧠
+                <Image src="/logo-cognorus.png" alt="Cognorus.ai" width={140} height={70} className="h-[70px] w-auto" />
               </motion.div>
               <h3 className="text-[32px] font-bold text-[#007aff] mb-2">Cognorus.ai</h3>
               <p className="text-[13px] text-[#86868b] uppercase tracking-[2px] mb-5">Adaptive • Yours</p>
@@ -129,11 +129,11 @@ export default function Products() {
             <div className="absolute inset-0 bg-gradient-to-br from-[#007aff]/[0.08] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
               <motion.div
-                className="w-[70px] h-[70px] bg-gradient-to-br from-[#007aff] to-[#0051d5] rounded-[18px] flex items-center justify-center text-[32px] mb-7 shadow-[0_10px_30px_rgba(0,122,255,0.3)]"
+                className="mb-7"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
               >
-                ⚡
+                <Image src="/logo-nexarus.png" alt="Nexarus.ai" width={140} height={70} className="h-[70px] w-auto" />
               </motion.div>
               <h3 className="text-[32px] font-bold text-[#007aff] mb-2">Nexarus.ai</h3>
               <p className="text-[13px] text-[#86868b] uppercase tracking-[2px] mb-5">Designed to Flow</p>
@@ -158,11 +158,11 @@ export default function Products() {
             <div className="absolute inset-0 bg-gradient-to-br from-[#007aff]/[0.08] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
               <motion.div
-                className="w-[70px] h-[70px] bg-gradient-to-br from-[#007aff] to-[#0051d5] rounded-[18px] flex items-center justify-center text-[32px] mb-7 shadow-[0_10px_30px_rgba(0,122,255,0.3)]"
+                className="mb-7"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity, delay: 1 }}
               >
-                🔋
+                <Image src="/logo-helorus.png" alt="Helorus.ai" width={140} height={70} className="h-[70px] w-auto" />
               </motion.div>
               <h3 className="text-[32px] font-bold text-[#007aff] mb-2">Helorus.ai</h3>
               <p className="text-[13px] text-[#86868b] uppercase tracking-[2px] mb-5">Power • Perfected</p>
