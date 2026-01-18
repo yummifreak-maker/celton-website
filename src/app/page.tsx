@@ -134,11 +134,11 @@ export default function Home() {
 
             <motion.p
               variants={fadeUp}
-              className="text-[clamp(16px,1.4vw,20px)] text-[#a1a1a6] max-w-[1000px] mx-auto leading-relaxed"
+              className="text-[clamp(16px,1.4vw,20px)] text-[#a1a1a6] max-w-[1100px] mx-auto leading-relaxed"
             >
-              Where AI, deeptech, and VLSI converge, the future of silicon evolves.
+              Where AI, deeptech, and VLSI converge, the future of silicon evolves. Intelligence isn&apos;t layered on —
               <br />
-              Intelligence isn&apos;t layered on — it&apos;s intrinsic to everything we build.
+              it&apos;s intrinsic to everything we build, from a cognitive learning platform and a silicon design engine to next-gen energy-efficient chips.
             </motion.p>
 
             <motion.div
