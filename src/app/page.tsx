@@ -118,14 +118,14 @@ export default function Home() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#007aff] text-[clamp(13px,1.2vw,16px)] tracking-[4px] font-semibold"
+              className="text-[#007aff] text-[clamp(15px,1.4vw,18px)] tracking-[5px] font-semibold uppercase"
             >
               Introducing the Celton Triad
             </motion.p>
 
             <motion.h1
               variants={fadeUp}
-              className="text-[clamp(48px,7vw,100px)] font-extrabold leading-[1] tracking-[-3px] bg-gradient-to-b from-white to-[#8b8b8d] bg-clip-text text-transparent"
+              className="text-[clamp(48px,7vw,100px)] font-extrabold leading-[1.05] tracking-[-1px] bg-gradient-to-b from-white to-[#8b8b8d] bg-clip-text text-transparent"
             >
               Intelligence.
               <br />
