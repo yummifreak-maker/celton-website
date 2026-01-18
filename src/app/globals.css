@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Typography - Apple-inspired */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-celton-black text-celton-light antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  ::selection {
+    @apply bg-celton-accent/30 text-white;
+  }
+}
+
+@layer components {
+  /* Premium Section Styling */
+  .section-premium {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+
+  /* Elegant Divider */
+  .divider-elegant {
+    @apply h-px bg-gradient-to-r from-transparent via-celton-silver/30 to-transparent;
+  }
+
+  /* Premium Button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-medium
+           bg-celton-light text-celton-black rounded-full
+           transition-all duration-300 ease-out
+           hover:bg-white hover:scale-105
+           active:scale-100;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-medium
+           border border-celton-silver/50 text-celton-light rounded-full
+           transition-all duration-300 ease-out
+           hover:border-celton-light hover:bg-celton-light/5;
+  }
+
+  /* Premium Card */
+  .card-premium {
+    @apply bg-gradient-to-b from-celton-gray/50 to-celton-dark/50
+           border border-celton-silver/10 rounded-3xl
+           backdrop-blur-xl;
+  }
+
+  /* Text Gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent
+           bg-gradient-to-r from-celton-light via-celton-silver to-celton-light;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent
+           bg-gradient-to-r from-celton-gold via-amber-200 to-celton-gold;
+  }
+}
+
+/* Premium Animations */
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}
+
+/* Custom Scrollbar - Minimal */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(134, 134, 139, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(134, 134, 139, 0.5);
+}
