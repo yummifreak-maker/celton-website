@@ -1,8 +1,19 @@
 # Celton Website Development Plan
 
-## Version: v0.0.0
+## Version: v0.0.1
 
-## Project Status: Initial Release
+## Project Status: Enhanced Design Release
+
+### Completed (v0.0.1)
+- [x] Updated branding to "Architecting Intelligence"
+- [x] Changed "Convergence" to "Triad" throughout site
+- [x] New hero section: "Intelligence architected into silicon."
+- [x] Added animated circuit lines and floating particles
+- [x] Added pulsing orb backgrounds
+- [x] Product taglines: Cognorus "Adaptive • Yours", Nexarus "Designed to Flow", Helorus "Power • Perfected"
+- [x] Enhanced deep-dive sections with visual backgrounds
+- [x] Value proposition section with hover effects
+- [x] Footer CTA: "The future is architected."
 
 ### Completed (v0.0.0)
 - [x] Project structure setup (Next.js 14, TypeScript, TailwindCSS)

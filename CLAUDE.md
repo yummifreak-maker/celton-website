@@ -2,13 +2,13 @@
 
 ## Project Overview
 **Company**: Celton Semiconductors
-**Tagline**: "Intelligence at the Core"
-**Version**: v0.0.0
+**Tagline**: "Architecting Intelligence"
+**Version**: v0.0.1
 **Location**: `D:\users\r!\celton-website`
 
 ## Brand Identity
 
-### The Celton Convergence
+### The Celton Triad
 Three intelligent platforms forming one unified ecosystem:
 
 1. **Cognorus.ai** - Cognitive Learning Platform
@@ -117,10 +117,20 @@ All products currently marked as "Coming Soon" / "In Development"
 
 ## Changelog
 
+### v0.0.1 (Enhanced Design)
+- Updated branding: "Architecting Intelligence" tagline
+- Changed "Convergence" to "Triad" throughout
+- New hero: "Intelligence architected into silicon."
+- Added animated circuit lines, floating particles, pulsing orbs
+- Product taglines: Cognorus "Adaptive • Yours", Nexarus "Designed to Flow", Helorus "Power • Perfected"
+- Enhanced deep-dive sections with DNA helix backgrounds
+- Value proposition section with hover effects
+- Footer CTA: "The future is architected."
+
 ### v0.0.0 (Initial Release)
 - Created project structure with Next.js 14, TypeScript, TailwindCSS
 - Implemented premium dark theme with Celton color palette
-- Built homepage with hero section, The Celton Convergence, product deep-dives
+- Built homepage with hero section, The Celton Triad, product deep-dives
 - Created About page with company vision, philosophy, and values
 - Created Contact page with form and contact information
 - Added Framer Motion animations for scroll reveals
@@ -129,5 +139,5 @@ All products currently marked as "Coming Soon" / "In Development"
 
 ---
 
-**Last Updated**: v0.0.0
+**Last Updated**: v0.0.1
 **Next Steps**: Add careers page, implement form submission, add product-specific pages
