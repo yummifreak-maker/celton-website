@@ -208,11 +208,11 @@ export default function About() {
             {[
               {
                 title: 'Intelligence First',
-                desc: 'AI isn't a feature — it's the architecture. Every platform is built with intelligence at its core.'
+                desc: "AI isn't a feature — it's the architecture. Every platform is built with intelligence at its core."
               },
               {
                 title: 'Global Impact',
-                desc: 'From India to Silicon Valley, we're building platforms for engineers and innovators worldwide.'
+                desc: "From India to Silicon Valley, we're building platforms for engineers and innovators worldwide."
               },
               {
                 title: 'Elegance in Complexity',
