@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState, useMemo } from 'react'
 
-// Enhanced Neural Network - Dense & Dynamic version
+// Neural Network - Balanced & Elegant version
 export default function NeuralNetwork() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
@@ -17,41 +17,36 @@ export default function NeuralNetwork() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  // Generate dense network of nodes
+  // Generate balanced network of nodes - fewer, more spread out
   const nodes = useMemo(() => {
     const allNodes: { id: string; x: number; y: number; layer: number; size: number; isPrimary: boolean }[] = []
 
-    // Dense layer structure - more nodes per layer
+    // Balanced layer structure - moderate nodes per layer
     const layers = [
-      { count: 5, x: 5 },
-      { count: 8, x: 12 },
-      { count: 10, x: 20 },
-      { count: 12, x: 30 },
-      { count: 14, x: 42 },  // Center dense
-      { count: 14, x: 54 },  // Center dense
-      { count: 12, x: 66 },
-      { count: 10, x: 76 },
-      { count: 8, x: 85 },
-      { count: 5, x: 93 },
+      { count: 3, x: 10 },
+      { count: 5, x: 25 },
+      { count: 6, x: 42 },   // Center
+      { count: 5, x: 60 },
+      { count: 3, x: 85 },
     ]
 
     layers.forEach((layer, layerIndex) => {
-      const spacing = 85 / (layer.count + 1)
+      const spacing = 70 / (layer.count + 1)
       for (let i = 0; i < layer.count; i++) {
-        const isPrimary = (layerIndex === 4 || layerIndex === 5) && (i === Math.floor(layer.count / 2))
+        const isPrimary = layerIndex === 2 && i === Math.floor(layer.count / 2)
         allNodes.push({
           id: `${layerIndex}-${i}`,
-          x: layer.x + (Math.random() - 0.5) * 3, // Add slight randomness
-          y: 7 + spacing * (i + 1) + (Math.random() - 0.5) * 2,
+          x: layer.x,
+          y: 15 + spacing * (i + 1),
           layer: layerIndex,
-          size: isPrimary ? 14 : layerIndex >= 3 && layerIndex <= 6 ? 8 : 5,
+          size: isPrimary ? 12 : layerIndex === 2 ? 8 : 6,
           isPrimary,
         })
       }
     })
 
-    // Add scattered ambient nodes for depth
-    for (let i = 0; i < 25; i++) {
+    // Add fewer ambient nodes
+    for (let i = 0; i < 10; i++) {
       allNodes.push({
         id: `ambient-${i}`,
         x: Math.random() * 100,
@@ -65,26 +60,24 @@ export default function NeuralNetwork() {
     return allNodes
   }, [])
 
-  // Generate dense connections
+  // Generate selective connections - not too dense
   const connections = useMemo(() => {
     const conns: { from: typeof nodes[0]; to: typeof nodes[0]; delay: number; speed: number }[] = []
     const networkNodes = nodes.filter(n => n.layer >= 0)
 
     for (let i = 0; i < networkNodes.length; i++) {
       const node = networkNodes[i]
-      // Connect to nodes in next 1-2 layers
-      const nextLayerNodes = networkNodes.filter(
-        n => n.layer === node.layer + 1 || n.layer === node.layer + 2
-      )
+      // Connect to nodes in next layer only
+      const nextLayerNodes = networkNodes.filter(n => n.layer === node.layer + 1)
 
       nextLayerNodes.forEach((target) => {
-        // Higher connection probability for denser network
-        if (Math.random() > 0.5) {
+        // Lower connection probability - more selective
+        if (Math.random() > 0.6) {
           conns.push({
             from: node,
             to: target,
-            delay: Math.random() * 2,
-            speed: 0.8 + Math.random() * 0.6, // Faster speeds
+            delay: Math.random() * 4,
+            speed: 2.5 + Math.random() * 1.5, // Slower, more elegant
           })
         }
       })
@@ -158,8 +151,6 @@ export default function NeuralNetwork() {
         transition={{ duration: 4, repeat: Infinity, delay: 2 }}
       />
 
-      {/* Fast-moving data streams (additional visual layer) */}
-      <DataStreams />
     </div>
   )
 }
@@ -179,33 +170,33 @@ function NetworkNode({ node }: { node: { id: string; x: number; y: number; layer
         background: node.isPrimary
           ? 'radial-gradient(circle, #007aff 0%, #0051d5 100%)'
           : isAmbient
-          ? 'rgba(0,122,255,0.4)'
-          : 'radial-gradient(circle, rgba(0,122,255,0.9) 0%, rgba(0,122,255,0.5) 100%)',
+          ? 'rgba(0,122,255,0.3)'
+          : 'radial-gradient(circle, rgba(0,122,255,0.8) 0%, rgba(0,122,255,0.4) 100%)',
         boxShadow: node.isPrimary
-          ? '0 0 25px rgba(0,122,255,0.9), 0 0 50px rgba(0,122,255,0.5)'
+          ? '0 0 20px rgba(0,122,255,0.7), 0 0 40px rgba(0,122,255,0.3)'
           : isAmbient
-          ? '0 0 6px rgba(0,122,255,0.4)'
-          : '0 0 12px rgba(0,122,255,0.6)',
+          ? '0 0 4px rgba(0,122,255,0.3)'
+          : '0 0 8px rgba(0,122,255,0.4)',
       }}
       animate={
         node.isPrimary
           ? {
-              scale: [1, 1.3, 1],
+              scale: [1, 1.15, 1],
               boxShadow: [
-                '0 0 25px rgba(0,122,255,0.9), 0 0 50px rgba(0,122,255,0.5)',
-                '0 0 40px rgba(0,122,255,1), 0 0 80px rgba(0,122,255,0.7)',
-                '0 0 25px rgba(0,122,255,0.9), 0 0 50px rgba(0,122,255,0.5)',
+                '0 0 20px rgba(0,122,255,0.7), 0 0 40px rgba(0,122,255,0.3)',
+                '0 0 30px rgba(0,122,255,0.9), 0 0 60px rgba(0,122,255,0.5)',
+                '0 0 20px rgba(0,122,255,0.7), 0 0 40px rgba(0,122,255,0.3)',
               ],
             }
           : {
-              scale: [1, 1.15, 1],
-              opacity: isAmbient ? [0.3, 0.6, 0.3] : [0.7, 1, 0.7],
+              scale: [1, 1.1, 1],
+              opacity: isAmbient ? [0.2, 0.4, 0.2] : [0.6, 0.9, 0.6],
             }
       }
       transition={{
-        duration: node.isPrimary ? 2 : 1.5 + Math.random(),
+        duration: node.isPrimary ? 4 : 3 + Math.random() * 2,
         repeat: Infinity,
-        delay: Math.random() * 2,
+        delay: Math.random() * 3,
         ease: 'easeInOut',
       }}
     />
@@ -231,89 +222,27 @@ function ConnectionLine({
         y1={`${from.y}%`}
         x2={`${to.x}%`}
         y2={`${to.y}%`}
-        stroke="rgba(0,122,255,0.12)"
+        stroke="rgba(0,122,255,0.08)"
         strokeWidth="1"
       />
-      {/* Fast animated pulse */}
+      {/* Slow, elegant pulse */}
       <motion.circle
-        r="2.5"
+        r="2"
         fill="#007aff"
         filter="url(#glow)"
         animate={{
           cx: [`${from.x}%`, `${to.x}%`],
           cy: [`${from.y}%`, `${to.y}%`],
-          opacity: [0, 1, 1, 0],
+          opacity: [0, 0.8, 0.8, 0],
         }}
         transition={{
           duration: speed,
           delay: delay,
           repeat: Infinity,
-          repeatDelay: 0.5 + Math.random(),
+          repeatDelay: 2 + Math.random() * 3,
           ease: 'easeInOut',
         }}
       />
     </g>
-  )
-}
-
-// Additional fast-moving data streams for "busy intelligence" feel
-function DataStreams() {
-  const streams = useMemo(() => {
-    return Array.from({ length: 8 }, (_, i) => ({
-      id: i,
-      startX: Math.random() * 30,
-      startY: 20 + Math.random() * 60,
-      endX: 70 + Math.random() * 30,
-      endY: 20 + Math.random() * 60,
-      duration: 2 + Math.random() * 2,
-      delay: Math.random() * 3,
-    }))
-  }, [])
-
-  return (
-    <svg className="absolute inset-0 w-full h-full pointer-events-none">
-      {streams.map((stream) => (
-        <g key={stream.id}>
-          {/* Stream path */}
-          <motion.line
-            x1={`${stream.startX}%`}
-            y1={`${stream.startY}%`}
-            x2={`${stream.endX}%`}
-            y2={`${stream.endY}%`}
-            stroke="rgba(0,122,255,0.1)"
-            strokeWidth="1"
-            strokeDasharray="8 8"
-            animate={{
-              strokeDashoffset: [0, -32],
-            }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          />
-          {/* Fast-moving bright pulse */}
-          <motion.circle
-            r="3"
-            fill="#00d4ff"
-            style={{
-              filter: 'drop-shadow(0 0 8px rgba(0,212,255,0.9))',
-            }}
-            animate={{
-              cx: [`${stream.startX}%`, `${stream.endX}%`],
-              cy: [`${stream.startY}%`, `${stream.endY}%`],
-              opacity: [0, 1, 1, 0],
-            }}
-            transition={{
-              duration: stream.duration,
-              delay: stream.delay,
-              repeat: Infinity,
-              repeatDelay: 1,
-              ease: 'linear',
-            }}
-          />
-        </g>
-      ))}
-    </svg>
   )
 }

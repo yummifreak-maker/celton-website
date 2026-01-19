@@ -3,14 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
-
-// Dynamic import for the Neural Network background
-const NeuralNetwork = dynamic(() => import('@/components/backgrounds/NeuralNetwork'), {
-  ssr: false,
-  loading: () => null,
-})
 
 // Apple-style animation variants
 const fadeUp = {
@@ -176,16 +169,6 @@ export default function Home() {
 
       {/* Hero Section - Full Height, No Scroll */}
       <section className="h-screen flex flex-col justify-center items-center text-center px-[4%] relative overflow-hidden">
-        {/* Neural Network Background */}
-        <motion.div
-          className="absolute inset-0 z-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 0.5 }}
-        >
-          <NeuralNetwork />
-        </motion.div>
-
         {/* Animated Background with Parallax */}
         <motion.div
           className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(0,122,255,0.15),transparent),radial-gradient(ellipse_60%_40%_at_80%_60%,rgba(147,51,234,0.1),transparent)] z-[1]"
