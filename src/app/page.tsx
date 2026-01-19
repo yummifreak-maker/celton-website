@@ -1,9 +1,16 @@
 'use client'
 
-import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
+
+// Dynamic import for the 3D chip scene
+const ChipScene = dynamic(() => import('@/components/ChipScene'), {
+  ssr: false,
+  loading: () => null,
+})
 
 // Apple-style animation variants
 const fadeUp = {
@@ -169,9 +176,19 @@ export default function Home() {
 
       {/* Hero Section - Full Height, No Scroll */}
       <section className="h-screen flex flex-col justify-center items-center text-center px-[4%] relative overflow-hidden">
+        {/* 3D Chip Scene Background */}
+        <motion.div
+          className="absolute inset-0 z-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, delay: 0.5 }}
+        >
+          <ChipScene />
+        </motion.div>
+
         {/* Animated Background with Parallax */}
         <motion.div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(0,122,255,0.15),transparent),radial-gradient(ellipse_60%_40%_at_80%_60%,rgba(147,51,234,0.1),transparent)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(0,122,255,0.15),transparent),radial-gradient(ellipse_60%_40%_at_80%_60%,rgba(147,51,234,0.1),transparent)] z-[1]"
           style={{
             x: mousePosition.x * 20,
             y: mousePosition.y * 20
@@ -181,7 +198,7 @@ export default function Home() {
 
         {/* Apple-style Gradient Mesh */}
         <motion.div
-          className="absolute inset-0 opacity-60"
+          className="absolute inset-0 opacity-60 z-[1]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.6 }}
           transition={{ duration: 2 }}
@@ -191,7 +208,7 @@ export default function Home() {
         </motion.div>
 
         {/* Circuit Lines Animation - Enhanced */}
-        <div className="absolute inset-0 opacity-[0.04]">
+        <div className="absolute inset-0 opacity-[0.04] z-[2]">
           <motion.div
             className="absolute top-[20%] left-0 w-full h-px bg-gradient-to-r from-transparent via-[#007aff] to-transparent"
             animate={{ x: ['-100%', '100%'], opacity: [0, 1, 0] }}
@@ -243,7 +260,7 @@ export default function Home() {
 
         {/* Pulsing Orbs with Parallax */}
         <motion.div
-          className="absolute -top-[20%] -left-[10%] w-[1000px] h-[1000px] rounded-full bg-[radial-gradient(circle,rgba(0,122,255,0.12)_0%,transparent_60%)]"
+          className="absolute -top-[20%] -left-[10%] w-[1000px] h-[1000px] rounded-full bg-[radial-gradient(circle,rgba(0,122,255,0.12)_0%,transparent_60%)] z-[1]"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.5, 0.8, 0.5]
@@ -255,7 +272,7 @@ export default function Home() {
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(147,51,234,0.1)_0%,transparent_60%)]"
+          className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(147,51,234,0.1)_0%,transparent_60%)] z-[1]"
           animate={{
             scale: [1, 1.15, 1],
             opacity: [0.4, 0.7, 0.4]
@@ -267,7 +284,7 @@ export default function Home() {
           transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         />
 
-        <div className="relative z-10 max-w-[1800px] w-full">
+        <div className="relative z-20 max-w-[1800px] w-full">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -389,7 +406,7 @@ export default function Home() {
         </div>
 
         {/* Footer - Positioned at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 py-6 border-t border-white/[0.05]">
+        <div className="absolute bottom-0 left-0 right-0 py-6 border-t border-white/[0.05] z-20">
           <div className="max-w-[1800px] mx-auto px-[4%]">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-[#86868b] text-sm">
