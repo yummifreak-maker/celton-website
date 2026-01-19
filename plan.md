@@ -1,8 +1,23 @@
 # Celton Website Development Plan
 
-## Version: v0.0.5
+## Version: v0.0.9f
 
-## Project Status: Apple-style Animations
+## Project Status: Trademark & Neuron Background
+
+### Completed (v0.0.9f)
+- [x] Added trademark (™) symbols to all brand names
+  - Celton Triad™, Cognorus.ai™, Nexarus.ai™, Helorus.ai™
+  - Prompt-to-Silicon™, Prompt-to-GDS™, Prompt-to-chip™
+  - Adaptive • Yours™, Power • Perfected™
+- [x] Replaced circuit lines with animated neuron network background
+  - Canvas-based animation with pulsing neurons
+  - Dynamic synaptic connections
+  - Signal pulses traveling along connections
+- [x] Increased Nexarus.ai logo size on products page
+
+### Completed (v0.0.5f)
+- [x] Updated logo files to logo-celton.png and logo-nexarus.png
+- [x] Fixed logo references across all pages
 
 ### Completed (v0.0.5)
 - [x] Added Apple-style animations to landing page

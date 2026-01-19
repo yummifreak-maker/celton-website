@@ -3,25 +3,25 @@
 ## Project Overview
 **Company**: Celton Semiconductors
 **Tagline**: "Architecting Intelligence"
-**Version**: v0.0.5
+**Version**: v0.0.9f
 **Location**: `D:\users\r!\celton-website`
 
 ## Brand Identity
 
-### The Celton Triad
+### The Celton Triad™
 Three platforms forming one unified ecosystem:
 
-1. **Cognorus.ai** - Cognitive Learning Platform
+1. **Cognorus.ai™** - Cognitive Learning Platform
    - AI-powered personalized semiconductor education
-   - Tagline: "Adaptive • Yours"
+   - Tagline: "Adaptive • Yours™"
 
-2. **Nexarus.ai** - Design Platform
+2. **Nexarus.ai™** - Design Platform
    - AI-assisted chip design from concept to GDS
-   - Tagline: "Designed to Flow"
+   - Tagline: "Prompt-to-Silicon™"
 
-3. **Helorus.ai** - Chip Development
+3. **Helorus.ai™** - Chip Development
    - Internal chip development for power electronics
-   - Tagline: "Power • Perfected"
+   - Tagline: "Power • Perfected™"
 
 ### Brand Positioning
 - **Tone**: Premium & Refined (Apple-like elegance)
@@ -112,7 +112,23 @@ Access at: http://localhost:3000
 
 ## Changelog
 
-### v0.0.5 (Current)
+### v0.0.9f (Current)
+- **Trademark Symbols**: Added ™ to all brand names across all pages
+  - Celton Triad™, Cognorus.ai™, Nexarus.ai™, Helorus.ai™
+  - Prompt-to-Silicon™, Prompt-to-GDS™, Prompt-to-chip™
+  - Adaptive • Yours™, Power • Perfected™
+- **Neuron Network Background**: Replaced circuit lines with animated neural network
+  - Canvas-based neuron animation with pulsing nodes
+  - Dynamic synaptic connections between neurons
+  - Signal pulses traveling along connections
+  - Blue/purple color scheme matching brand
+- **Nexarus Logo Size**: Increased logo size on products page for better visibility
+
+### v0.0.5f
+- Updated logo files: `logo-celton.png`, `logo-nexarus.png`
+- Fixed logo references across all pages
+
+### v0.0.5
 - Added Apple-style animations to landing page:
   - Navigation slide-down with staggered link reveals
   - Mouse-tracking parallax on background gradients and orbs
@@ -157,4 +173,4 @@ Access at: http://localhost:3000
 
 ---
 
-**Last Updated**: v0.0.5
+**Last Updated**: v0.0.9f
