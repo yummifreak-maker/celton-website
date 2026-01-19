@@ -19,38 +19,66 @@ const stagger = {
 
 const openRoles = [
   {
+    title: 'Prompt Engineer',
+    team: 'AI & Intelligence',
+    location: 'Hybrid',
+    type: 'Full-time / Part-time',
+    description: 'Craft intelligent AI interactions for chip design workflows. Shape how engineers communicate with our AI-powered platforms.'
+  },
+  {
     title: 'DeepTech Research Engineer',
     team: 'Core Engineering',
-    location: 'Remote / Hybrid',
-    type: 'Full-time',
-    description: 'Push the boundaries of what silicon can do. You\'ll work on next-gen architectures that don\'t exist in textbooks yet.'
+    location: 'Hybrid',
+    type: 'Full-time / Part-time',
+    description: 'Push the boundaries of what silicon can do. Work on next-gen architectures that don\'t exist in textbooks yet.'
   },
   {
     title: 'Machine Learning Architect',
     team: 'AI & Intelligence',
-    location: 'Remote / Hybrid',
-    type: 'Full-time',
+    location: 'Hybrid',
+    type: 'Full-time / Part-time',
     description: 'Build the AI that builds chips. Design intelligent systems that accelerate semiconductor design from months to days.'
   },
   {
     title: 'UI/UX Designer',
     team: 'Product Design',
-    location: 'Remote',
-    type: 'Full-time',
+    location: 'Hybrid',
+    type: 'Full-time / Part-time',
     description: 'Make complexity feel simple. Transform dense technical workflows into experiences that engineers actually love using.'
   },
   {
-    title: 'Experiential Learning Architect',
+    title: 'VLSI Frontend Engineer',
+    team: 'Core Engineering',
+    location: 'Hybrid',
+    type: 'Full-time / Part-time',
+    description: 'Design RTL architectures and drive synthesis optimization. Build the digital logic that powers next-gen chips.'
+  },
+  {
+    title: 'VLSI Backend Engineer',
+    team: 'Core Engineering',
+    location: 'Hybrid',
+    type: 'Full-time / Part-time',
+    description: 'Master physical design, timing closure, and floorplanning. Turn RTL into manufacturable silicon.'
+  },
+  {
+    title: 'VLSI DFT Engineer',
+    team: 'Core Engineering',
+    location: 'Hybrid',
+    type: 'Full-time / Part-time',
+    description: 'Design for testability and reliability. Ensure our chips meet the highest quality standards from day one.'
+  },
+  {
+    title: 'Experiential Learning Designer',
     team: 'Cognorus',
-    location: 'Remote',
-    type: 'Full-time',
+    location: 'Hybrid',
+    type: 'Full-time / Part-time',
     description: 'Reinvent how the world learns semiconductors. Design adaptive, AI-powered learning journeys that feel nothing like traditional education.'
   },
   {
     title: 'Growth & Marketing Lead',
     team: 'Marketing',
-    location: 'Remote / Hybrid',
-    type: 'Full-time',
+    location: 'Hybrid',
+    type: 'Full-time / Part-time',
     description: 'Tell the story of silicon\'s future. Build a brand that resonates with engineers, institutions, and enterprises worldwide.'
   }
 ]
@@ -72,12 +100,12 @@ export default function Careers() {
               />
             </Link>
             <div className="hidden md:flex items-center gap-11">
-              <Link href="/products" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
-                Innovations
+              <Link href="/" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
+                Home
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
-              <Link href="/about" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
-                About
+              <Link href="/products" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
+                Innovations
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
               <Link href="/careers" className="text-[#007aff] text-sm relative group">
@@ -94,68 +122,66 @@ export default function Careers() {
       </nav>
 
       {/* Hero */}
-      <section className="pt-32 pb-20 relative">
+      <section className="pt-28 pb-6 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-celton-dark/50 to-celton-black" />
-        <div className="relative max-w-4xl mx-auto px-6 text-center">
+        <div className="relative max-w-5xl mx-auto px-6 text-center">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={stagger}
           >
-            <motion.p variants={fadeUp} className="text-celton-accent uppercase tracking-widest text-sm mb-4">
-              Careers
-            </motion.p>
-            <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl font-semibold text-celton-light mb-6">
-              We don't just hire résumés.
+            <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-semibold text-celton-light mb-6 leading-tight">
+              We don't hire résumés.
+              <br />
+              <span className="text-celton-accent">We hire restless minds.</span>
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-xl text-celton-silver leading-relaxed">
-              Yes, we respect the world's top institutions. But what we really need? Street smarters.
-              Builders who explore the unknown. People who can't stop asking "what if?"
+            <motion.p variants={fadeUp} className="text-lg md:text-xl text-celton-silver leading-relaxed max-w-3xl mx-auto">
+              Degrees and GPAs are all great. But we hire for something else.
+              <br />
+              If you've ever felt you were made for more than a traditional path, you're home.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-16 relative">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+      <section className="py-6 relative">
+        <div className="max-w-[1400px] mx-auto px-[5%]">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={stagger}
-            className="grid md:grid-cols-2 gap-12 items-center"
+            className="grid md:grid-cols-2 gap-16 items-center"
           >
             <motion.div variants={fadeUp}>
-              <h2 className="text-3xl md:text-4xl font-semibold text-celton-light mb-6">
+              <h2 className="text-3xl md:text-4xl font-semibold text-celton-light mb-5">
                 Credentials open doors.
                 <br />
-                <span className="text-celton-silver">Curiosity builds worlds.</span>
+                <span className="text-celton-silver">Curiosity builds the future.</span>
               </h2>
-              <p className="text-celton-silver text-lg leading-relaxed mb-6">
-                We're looking for the ones who taught themselves Verilog at 2 AM.
-                The designers who can't stop tweaking until it feels right.
-                The marketers who understand that deep tech isn't boring — it's the future.
-              </p>
-              <p className="text-celton-silver text-lg leading-relaxed">
-                If you've ever felt like you were made for something bigger than what traditional paths offer,
-                you might be exactly who we're looking for.
+              <p className="text-celton-silver text-base md:text-lg leading-relaxed">
+                We're looking for the ones who don't wait for permission to innovate, who taught themselves Verilog at 2 AM and the linguists who treat a prompt like a work of art. The designers who can't stop tweaking a pixel until it breathes, and the marketers who know that deep tech isn't just hardware—it's the pulse of the future. Whether you're mapping billions of transistors or refining the soul of an algorithm, you don't just work here. You build the things the world hasn't dared to imagine yet.
               </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="space-y-6">
+            <motion.div variants={fadeUp} className="grid grid-cols-3 gap-3">
               {[
-                { label: 'DeepTech', desc: 'Explore architectures that don\'t exist yet' },
-                { label: 'Machine Learning', desc: 'Build AI that accelerates silicon design' },
-                { label: 'UI/UX', desc: 'Make the complex feel effortless' },
-                { label: 'Experiential Learning', desc: 'Reinvent how the world learns' },
-                { label: 'Marketing', desc: 'Tell the story of silicon\'s future' }
+                { label: 'Prompt Engineering', desc: 'Linguists who treat prompts like art' },
+                { label: 'AI & Intelligence', desc: 'What textbooks haven\'t written yet' },
+                { label: 'Machine Learning', desc: 'Teaching machines to think in silicon' },
+                { label: 'UI/UX', desc: 'Tweaking pixels until they breathe' },
+                { label: 'VLSI Frontend', desc: 'Where logic meets obsession' },
+                { label: 'VLSI Backend', desc: 'Mapping billions of transistors' },
+                { label: 'VLSI DFT', desc: 'Because silicon doesn\'t get second chances' },
+                { label: 'Product Design', desc: 'Unlearning how the world learns' },
+                { label: 'Marketing', desc: 'Turning niche into next big thing' }
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                  <div className="w-2 h-2 rounded-full bg-celton-accent mt-2 flex-shrink-0" />
+                <div key={i} className="flex items-start gap-2 p-3 rounded-xl bg-white/[0.03] border border-white/[0.05] hover:border-celton-accent/20 transition-colors">
+                  <div className="w-2 h-2 rounded-full bg-celton-accent mt-1.5 flex-shrink-0" />
                   <div>
-                    <p className="text-celton-light font-medium">{item.label}</p>
-                    <p className="text-celton-silver text-sm">{item.desc}</p>
+                    <p className="text-celton-light font-medium text-sm">{item.label}</p>
+                    <p className="text-celton-silver text-xs">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -165,22 +191,22 @@ export default function Careers() {
       </section>
 
       {/* Values */}
-      <section className="py-16 relative">
+      <section className="py-6 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-celton-dark/30 to-transparent" />
-        <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
+        <div className="relative max-w-[1400px] mx-auto px-[5%]">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={stagger}
-            className="text-center mb-12"
+            className="text-center mb-5"
           >
-            <motion.h2 variants={fadeUp} className="text-3xl font-semibold text-celton-light mb-4">
+            <motion.h2 variants={fadeUp} className="text-2xl md:text-3xl font-semibold text-celton-light">
               What we value
             </motion.h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-5">
             {[
               {
                 title: 'Relentless Curiosity',
@@ -202,7 +228,7 @@ export default function Careers() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 transition={{ delay: i * 0.1 }}
-                className="card-premium p-8 text-center"
+                className="card-premium p-6 text-center hover:border-celton-accent/20 transition-colors"
               >
                 <p className="text-celton-light text-lg font-medium mb-3">{value.title}</p>
                 <p className="text-celton-silver text-sm leading-relaxed">{value.desc}</p>
@@ -232,14 +258,15 @@ export default function Careers() {
 
           <div className="space-y-4">
             {openRoles.map((role, i) => (
-              <motion.div
+              <motion.a
                 key={i}
+                href={`mailto:careers@celtonsemi.com?subject=Application for ${role.title}&body=Hi Celton Team,%0D%0A%0D%0AI am interested in the ${role.title} position.%0D%0A%0D%0A[Please attach your resume and include a brief introduction]`}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
                 transition={{ delay: i * 0.05 }}
-                className="group p-6 rounded-2xl bg-white/[0.03] border border-white/[0.05] hover:border-celton-accent/30 transition-all cursor-pointer"
+                className="group block p-6 rounded-2xl bg-white/[0.03] border border-white/[0.05] hover:border-celton-accent/30 transition-all cursor-pointer"
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
@@ -265,7 +292,7 @@ export default function Careers() {
                     </span>
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
@@ -284,12 +311,12 @@ export default function Careers() {
               Don't see your role?
             </motion.h2>
             <motion.p variants={fadeUp} className="text-xl text-celton-silver mb-10">
-              We're always looking for exceptional people. If you believe you can contribute to the future of silicon, reach out.
+              Exceptional talent always has a home here. If you're ready to redefine silicon, reach out.
             </motion.p>
             <motion.div variants={fadeUp}>
-              <Link href="/contact" className="btn-primary">
+              <a href="mailto:info@celtonsemi.com?subject=Career Inquiry&body=Hi Celton Team,%0D%0A%0D%0AI am interested in exploring career opportunities at Celton Semiconductors.%0D%0A%0D%0A[Please include a brief introduction about yourself]" className="btn-primary">
                 Get in Touch
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
         </div>

@@ -39,10 +39,6 @@ export default function Home() {
                 Innovations
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
-              <Link href="/about" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
-                About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
-              </Link>
               <Link href="/careers" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
                 Careers
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
@@ -134,11 +130,18 @@ export default function Home() {
 
             <motion.p
               variants={fadeUp}
+              className="text-[clamp(18px,1.6vw,24px)] text-[#86868b] tracking-[2px]"
+            >
+              From the atom up. From inception forward.
+            </motion.p>
+
+            <motion.p
+              variants={fadeUp}
               className="text-[clamp(16px,1.4vw,20px)] text-[#a1a1a6] max-w-[1300px] mx-auto leading-relaxed"
             >
-              Where AI, deeptech, and VLSI converge, the future of silicon evolves. Intelligence isn&apos;t layered on —
+              Where AI, deeptech, and VLSI converge, the future of innovation evolves. Intelligence isn&apos;t layered on —
               <br />
-              it&apos;s intrinsic to everything we build, from a cognitive learning platform and a design engine to next-gen energy chips.
+              it&apos;s intrinsic to everything we build, from a cognitive learning and a design automation to next-gen energy chips.
             </motion.p>
 
             <motion.div
