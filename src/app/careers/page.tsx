@@ -92,7 +92,7 @@ export default function Careers() {
           <div className="flex items-center justify-between h-[72px]">
             <Link href="/" className="flex items-center">
               <Image
-                src="/celton-logo.png"
+                src="/logo-celton.png"
                 alt="Celton Semiconductors"
                 width={280}
                 height={84}

@@ -128,7 +128,7 @@ export default function Home() {
             >
               <Link href="/" className="flex items-center">
                 <Image
-                  src="/celton-logo.png"
+                  src="/logo-celton.png"
                   alt="Celton Semiconductors"
                   width={280}
                   height={84}
