@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 const fadeUp = {
@@ -19,15 +19,16 @@ const stagger = {
   }
 }
 
-export default function Contact() {
+// Component that uses searchParams - needs to be wrapped in Suspense
+function ContactFormInner({ formData, setFormData, sending, setSending, sent, setSent }: {
+  formData: { name: string; email: string; company: string; interest: string; message: string };
+  setFormData: React.Dispatch<React.SetStateAction<{ name: string; email: string; company: string; interest: string; message: string }>>;
+  sending: boolean;
+  setSending: React.Dispatch<React.SetStateAction<boolean>>;
+  sent: boolean;
+  setSent: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const searchParams = useSearchParams()
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    interest: '',
-    message: ''
-  })
 
   // Pre-fill interest from URL query parameter
   useEffect(() => {
@@ -35,9 +36,7 @@ export default function Contact() {
     if (interest) {
       setFormData(prev => ({ ...prev, interest: decodeURIComponent(interest) }))
     }
-  }, [searchParams])
-  const [sending, setSending] = useState(false)
-  const [sent, setSent] = useState(false)
+  }, [searchParams, setFormData])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -60,6 +59,108 @@ ${formData.message}`
       setSent(true)
     }, 1000)
   }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-celton-silver text-sm mb-2">Name</label>
+          <input
+            type="text"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            className="w-full bg-celton-gray/50 border border-celton-silver/20 rounded-lg px-4 py-3 text-base
+                     text-celton-light placeholder-celton-silver/50
+                     focus:outline-none focus:border-celton-accent/50 transition-colors"
+            placeholder="Your name"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-celton-silver text-sm mb-2">Email</label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            className="w-full bg-celton-gray/50 border border-celton-silver/20 rounded-lg px-4 py-3 text-base
+                     text-celton-light placeholder-celton-silver/50
+                     focus:outline-none focus:border-celton-accent/50 transition-colors"
+            placeholder="your@email.com"
+            required
+          />
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-celton-silver text-sm mb-2">Company / Institution</label>
+          <input
+            type="text"
+            value={formData.company}
+            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+            className="w-full bg-celton-gray/50 border border-celton-silver/20 rounded-lg px-4 py-3 text-base
+                     text-celton-light placeholder-celton-silver/50
+                     focus:outline-none focus:border-celton-accent/50 transition-colors"
+            placeholder="Where do you work or study?"
+          />
+        </div>
+        <div>
+          <label className="block text-celton-silver text-sm mb-2">I'm interested in</label>
+          <select
+            value={formData.interest}
+            onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+            className="w-full bg-celton-gray/50 border border-celton-silver/20 rounded-lg px-4 py-3 text-base
+                     text-celton-light
+                     focus:outline-none focus:border-celton-accent/50 transition-colors"
+            required
+          >
+            <option value="" className="bg-celton-dark">Select an option</option>
+            <option value="Cognorus.ai - Learning Platform" className="bg-celton-dark">Cognorus.ai - Learning Platform</option>
+            <option value="Nexarus.ai - Design Platform" className="bg-celton-dark">Nexarus.ai - Design Platform</option>
+            <option value="Helorus.ai - Chip Development" className="bg-celton-dark">Helorus.ai - Chip Development</option>
+            <option value="Partnership Opportunities" className="bg-celton-dark">Partnership Opportunities</option>
+            <option value="Career Opportunities" className="bg-celton-dark">Career Opportunities</option>
+            <option value="Attending Events" className="bg-celton-dark">Attending Events</option>
+            <option value="Other" className="bg-celton-dark">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label className="block text-celton-silver text-sm mb-2">Message</label>
+        <textarea
+          value={formData.message}
+          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          rows={3}
+          className="w-full bg-celton-gray/50 border border-celton-silver/20 rounded-lg px-4 py-3 text-base
+                   text-celton-light placeholder-celton-silver/50 resize-none
+                   focus:outline-none focus:border-celton-accent/50 transition-colors"
+          placeholder="Tell us more about what you're looking for..."
+          required
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={sending}
+        className="btn-primary w-full py-3.5 text-base disabled:opacity-50"
+      >
+        {sending ? 'Opening email...' : sent ? 'Email client opened!' : 'Send Message'}
+      </button>
+    </form>
+  )
+}
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    interest: '',
+    message: ''
+  })
+  const [sending, setSending] = useState(false)
+  const [sent, setSent] = useState(false)
 
   return (
     <main className="h-screen bg-celton-black overflow-hidden flex flex-col">
@@ -130,93 +231,16 @@ ${formData.message}`
               animate="visible"
               variants={fadeUp}
             >
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-celton-silver text-sm mb-2">Name</label>
-                    <input
-                      type="text"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-celton-gray/50 border border-celton-silver/20 rounded-lg px-4 py-3 text-base
-                               text-celton-light placeholder-celton-silver/50
-                               focus:outline-none focus:border-celton-accent/50 transition-colors"
-                      placeholder="Your name"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-celton-silver text-sm mb-2">Email</label>
-                    <input
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-celton-gray/50 border border-celton-silver/20 rounded-lg px-4 py-3 text-base
-                               text-celton-light placeholder-celton-silver/50
-                               focus:outline-none focus:border-celton-accent/50 transition-colors"
-                      placeholder="your@email.com"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-celton-silver text-sm mb-2">Company / Institution</label>
-                    <input
-                      type="text"
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full bg-celton-gray/50 border border-celton-silver/20 rounded-lg px-4 py-3 text-base
-                               text-celton-light placeholder-celton-silver/50
-                               focus:outline-none focus:border-celton-accent/50 transition-colors"
-                      placeholder="Where do you work or study?"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-celton-silver text-sm mb-2">I'm interested in</label>
-                    <select
-                      value={formData.interest}
-                      onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                      className="w-full bg-celton-gray/50 border border-celton-silver/20 rounded-lg px-4 py-3 text-base
-                               text-celton-light
-                               focus:outline-none focus:border-celton-accent/50 transition-colors"
-                      required
-                    >
-                      <option value="" className="bg-celton-dark">Select an option</option>
-                      <option value="Cognorus.ai - Learning Platform" className="bg-celton-dark">Cognorus.ai - Learning Platform</option>
-                      <option value="Nexarus.ai - Design Platform" className="bg-celton-dark">Nexarus.ai - Design Platform</option>
-                      <option value="Helorus.ai - Chip Development" className="bg-celton-dark">Helorus.ai - Chip Development</option>
-                      <option value="Partnership Opportunities" className="bg-celton-dark">Partnership Opportunities</option>
-                      <option value="Career Opportunities" className="bg-celton-dark">Career Opportunities</option>
-                      <option value="Attending Events" className="bg-celton-dark">Attending Events</option>
-                      <option value="Other" className="bg-celton-dark">Other</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-celton-silver text-sm mb-2">Message</label>
-                  <textarea
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={3}
-                    className="w-full bg-celton-gray/50 border border-celton-silver/20 rounded-lg px-4 py-3 text-base
-                             text-celton-light placeholder-celton-silver/50 resize-none
-                             focus:outline-none focus:border-celton-accent/50 transition-colors"
-                    placeholder="Tell us more about what you're looking for..."
-                    required
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={sending}
-                  className="btn-primary w-full py-3.5 text-base disabled:opacity-50"
-                >
-                  {sending ? 'Opening email...' : sent ? 'Email client opened!' : 'Send Message'}
-                </button>
-              </form>
+              <Suspense fallback={<div className="text-celton-silver">Loading...</div>}>
+                <ContactFormInner
+                  formData={formData}
+                  setFormData={setFormData}
+                  sending={sending}
+                  setSending={setSending}
+                  sent={sent}
+                  setSent={setSent}
+                />
+              </Suspense>
             </motion.div>
           </div>
         </section>
