@@ -236,12 +236,14 @@ export default function Products() {
               ))}
             </motion.ul>
             <motion.div variants={fadeUp}>
-              <Link
-                href="/contact?interest=Cognorus.ai+-+Learning+Platform"
+              <a
+                href="https://web-snowy-beta-61.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-8 py-3 text-[15px] font-medium rounded-full bg-[#007aff] text-white shadow-[0_4px_20px_rgba(0,122,255,0.3)] hover:bg-[#0051d5] hover:-translate-y-0.5 transition-all"
               >
                 Start Learning
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
 
