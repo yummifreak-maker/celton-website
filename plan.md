@@ -1,8 +1,18 @@
 # Celton Website Development Plan
 
-## Version: v0.0.4
+## Version: v0.0.5
 
-## Project Status: Logo Update & Vercel Deployment
+## Project Status: Apple-style Animations
+
+### Completed (v0.0.5)
+- [x] Added Apple-style animations to landing page
+- [x] Navigation slide-down with staggered link reveals
+- [x] Mouse-tracking parallax on background elements
+- [x] Word-by-word 3D flip animation on subheadline
+- [x] Shimmer effect on primary CTA button
+- [x] Pulsing glow on tagline
+- [x] Floating particles with glow effects
+- [x] Enhanced blur-reveal transitions
 
 ### Completed (v0.0.4)
 - [x] Updated logo from `logo-celton.png` to `celton-logo.png` across all pages

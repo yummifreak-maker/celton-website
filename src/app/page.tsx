@@ -1,108 +1,270 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
-// Animation variants
+// Apple-style animation variants
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 }
+  hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.4, 0.25, 1]
+    }
+  }
+}
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.9, filter: 'blur(20px)' },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 1,
+      ease: [0.25, 0.4, 0.25, 1]
+    }
+  }
 }
 
 const stagger = {
   visible: {
     transition: {
-      staggerChildren: 0.15
+      staggerChildren: 0.12,
+      delayChildren: 0.1
     }
   }
 }
 
+// Word-by-word animation for hero text
+const wordAnimation = {
+  hidden: { opacity: 0, y: 20, rotateX: 90 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    transition: {
+      delay: i * 0.08,
+      duration: 0.6,
+      ease: [0.25, 0.4, 0.25, 1]
+    }
+  })
+}
+
+// Glow pulse animation
+const glowPulse = {
+  animate: {
+    boxShadow: [
+      '0 0 20px rgba(0,122,255,0.3)',
+      '0 0 40px rgba(0,122,255,0.5)',
+      '0 0 20px rgba(0,122,255,0.3)'
+    ],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: 'easeInOut'
+    }
+  }
+}
+
+// Animated word component
+const AnimatedWords = ({ text, className }: { text: string; className?: string }) => {
+  const words = text.split(' ')
+  return (
+    <span className={className}>
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          custom={i}
+          variants={wordAnimation}
+          initial="hidden"
+          animate="visible"
+          className="inline-block mr-[0.25em]"
+          style={{ perspective: '1000px' }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </span>
+  )
+}
+
 export default function Home() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  // Mouse tracking for parallax
+  useEffect(() => {
+    setIsLoaded(true)
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 2
+      const y = (e.clientY / window.innerHeight - 0.5) * 2
+      setMousePosition({ x, y })
+    }
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
   return (
     <main className="h-screen bg-black overflow-hidden">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl border-b border-white/5">
+      {/* Navigation with fade-in animation */}
+      <motion.nav
+        className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl border-b border-white/5"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+      >
         <div className="max-w-[1800px] mx-auto px-[4%]">
           <div className="flex items-center justify-between h-[72px]">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/celton-logo.png"
-                alt="Celton Semiconductors"
-                width={280}
-                height={84}
-                className="h-16 w-auto"
-              />
-            </Link>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/celton-logo.png"
+                  alt="Celton Semiconductors"
+                  width={280}
+                  height={84}
+                  className="h-16 w-auto"
+                />
+              </Link>
+            </motion.div>
             <div className="hidden md:flex items-center gap-11">
-              <Link href="/products" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
-                Innovations
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
-              </Link>
-              <Link href="/careers" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
-                Careers
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
-              </Link>
-              <Link href="/contact" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
-                Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
-              </Link>
+              {[
+                { href: '/products', label: 'Innovations' },
+                { href: '/careers', label: 'Careers' },
+                { href: '/contact', label: 'Contact' }
+              ].map((item, i) => (
+                <motion.div
+                  key={item.href}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + i * 0.1, duration: 0.4 }}
+                >
+                  <Link
+                    href={item.href}
+                    className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group"
+                  >
+                    {item.label}
+                    <motion.span
+                      className="absolute -bottom-1 left-0 h-0.5 bg-[#007aff]"
+                      initial={{ width: 0 }}
+                      whileHover={{ width: '100%' }}
+                      transition={{ duration: 0.2 }}
+                    />
+                  </Link>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Hero Section - Full Height, No Scroll */}
       <section className="h-screen flex flex-col justify-center items-center text-center px-[4%] relative overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(0,122,255,0.15),transparent),radial-gradient(ellipse_60%_40%_at_80%_60%,rgba(147,51,234,0.1),transparent)]" />
+        {/* Animated Background with Parallax */}
+        <motion.div
+          className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(0,122,255,0.15),transparent),radial-gradient(ellipse_60%_40%_at_80%_60%,rgba(147,51,234,0.1),transparent)]"
+          style={{
+            x: mousePosition.x * 20,
+            y: mousePosition.y * 20
+          }}
+          transition={{ type: 'spring', stiffness: 50, damping: 30 }}
+        />
 
-        {/* Circuit Lines Animation */}
-        <div className="absolute inset-0 opacity-[0.03]">
+        {/* Apple-style Gradient Mesh */}
+        <motion.div
+          className="absolute inset-0 opacity-60"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.6 }}
+          transition={{ duration: 2 }}
+        >
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-[#007aff]/10 blur-[120px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-purple-600/10 blur-[100px]" />
+        </motion.div>
+
+        {/* Circuit Lines Animation - Enhanced */}
+        <div className="absolute inset-0 opacity-[0.04]">
           <motion.div
-            className="absolute top-[20%] left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#007aff] to-transparent"
-            animate={{ x: ['-100%', '100%'] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+            className="absolute top-[20%] left-0 w-full h-px bg-gradient-to-r from-transparent via-[#007aff] to-transparent"
+            animate={{ x: ['-100%', '100%'], opacity: [0, 1, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
           />
           <motion.div
-            className="absolute top-[50%] left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#007aff] to-transparent"
-            animate={{ x: ['-100%', '100%'] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'linear', delay: 2 }}
+            className="absolute top-[50%] left-0 w-full h-px bg-gradient-to-r from-transparent via-[#007aff] to-transparent"
+            animate={{ x: ['100%', '-100%'], opacity: [0, 1, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: 'linear', delay: 1 }}
           />
           <motion.div
-            className="absolute top-[80%] left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#007aff] to-transparent"
-            animate={{ x: ['-100%', '100%'] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'linear', delay: 4 }}
+            className="absolute top-[75%] left-0 w-full h-px bg-gradient-to-r from-transparent via-[#007aff] to-transparent"
+            animate={{ x: ['-100%', '100%'], opacity: [0, 1, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: 'linear', delay: 2 }}
           />
         </div>
 
-        {/* Floating Particles */}
-        <motion.div
-          className="absolute top-[30%] left-[20%] w-1 h-1 bg-[#007aff] rounded-full"
-          animate={{ y: [0, -30, 0], opacity: [0, 0.6, 0], scale: [1, 1.5, 1] }}
-          transition={{ duration: 6, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute top-[60%] left-[70%] w-1 h-1 bg-[#007aff] rounded-full"
-          animate={{ y: [0, -30, 0], opacity: [0, 0.6, 0], scale: [1, 1.5, 1] }}
-          transition={{ duration: 6, repeat: Infinity, delay: 1.5 }}
-        />
-        <motion.div
-          className="absolute top-[40%] left-[80%] w-1 h-1 bg-[#007aff] rounded-full"
-          animate={{ y: [0, -30, 0], opacity: [0, 0.6, 0], scale: [1, 1.5, 1] }}
-          transition={{ duration: 6, repeat: Infinity, delay: 3 }}
-        />
+        {/* Floating Particles - Apple style with glow */}
+        {[
+          { top: '25%', left: '15%', delay: 0, size: 3 },
+          { top: '65%', left: '75%', delay: 1.5, size: 2 },
+          { top: '35%', left: '85%', delay: 3, size: 4 },
+          { top: '75%', left: '25%', delay: 2, size: 2 },
+          { top: '45%', left: '10%', delay: 4, size: 3 },
+        ].map((particle, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-[#007aff]"
+            style={{
+              top: particle.top,
+              left: particle.left,
+              width: particle.size,
+              height: particle.size,
+              boxShadow: '0 0 10px rgba(0,122,255,0.8), 0 0 20px rgba(0,122,255,0.4)'
+            }}
+            animate={{
+              y: [0, -40, 0],
+              opacity: [0, 0.8, 0],
+              scale: [0.5, 1.2, 0.5]
+            }}
+            transition={{
+              duration: 5 + i,
+              repeat: Infinity,
+              delay: particle.delay,
+              ease: 'easeInOut'
+            }}
+          />
+        ))}
 
-        {/* Pulsing Orbs */}
+        {/* Pulsing Orbs with Parallax */}
         <motion.div
-          className="absolute -top-[20%] -left-[10%] w-[1000px] h-[1000px] rounded-full bg-[radial-gradient(circle,rgba(0,122,255,0.1)_0%,transparent_70%)]"
-          animate={{ scale: [1, 1.3, 1], x: [0, 20, 0], y: [0, 20, 0], opacity: [0.4, 0.7, 0.4] }}
-          transition={{ duration: 10, repeat: Infinity }}
+          className="absolute -top-[20%] -left-[10%] w-[1000px] h-[1000px] rounded-full bg-[radial-gradient(circle,rgba(0,122,255,0.12)_0%,transparent_60%)]"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.5, 0.8, 0.5]
+          }}
+          style={{
+            x: mousePosition.x * -30,
+            y: mousePosition.y * -30
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(147,51,234,0.08)_0%,transparent_70%)]"
-          animate={{ scale: [1, 1.3, 1], x: [0, -20, 0], y: [0, -20, 0], opacity: [0.4, 0.7, 0.4] }}
-          transition={{ duration: 12, repeat: Infinity, direction: 'reverse' }}
+          className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(147,51,234,0.1)_0%,transparent_60%)]"
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.4, 0.7, 0.4]
+          }}
+          style={{
+            x: mousePosition.x * 25,
+            y: mousePosition.y * 25
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         />
 
         <div className="relative z-10 max-w-[1800px] w-full">
@@ -112,29 +274,54 @@ export default function Home() {
             variants={stagger}
             className="space-y-6"
           >
-            <motion.p
-              variants={fadeUp}
-              className="text-[#007aff] text-[clamp(14px,1.2vw,16px)] tracking-[4px] font-semibold"
+            {/* Intro badge with reveal animation */}
+            <motion.div
+              variants={scaleIn}
+              className="inline-block"
             >
-              Introducing the Celton Triad
-            </motion.p>
+              <motion.p
+                className="text-[#007aff] text-[clamp(14px,1.2vw,16px)] tracking-[4px] font-semibold px-6 py-2 rounded-full border border-[#007aff]/20 bg-[#007aff]/5 backdrop-blur-sm"
+                whileHover={{ scale: 1.02, borderColor: 'rgba(0,122,255,0.4)' }}
+              >
+                Introducing the Celton Triad
+              </motion.p>
+            </motion.div>
 
+            {/* Main headline with character animation */}
             <motion.h1
               variants={fadeUp}
-              className="text-[clamp(52px,8vw,110px)] font-extrabold leading-[1.08] tracking-[1px] bg-gradient-to-b from-white to-[#8b8b8d] bg-clip-text text-transparent"
+              className="text-[clamp(52px,8vw,110px)] font-extrabold leading-[1.08] tracking-[1px]"
             >
-              Intelligence.
+              <motion.span
+                className="bg-gradient-to-b from-white via-white to-[#8b8b8d] bg-clip-text text-transparent inline-block"
+                animate={{
+                  backgroundPosition: ['0% 0%', '100% 100%', '0% 0%']
+                }}
+                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+                style={{ backgroundSize: '200% 200%' }}
+              >
+                Intelligence.
+              </motion.span>
               <br />
-              Engineered into silicon.
+              <motion.span
+                className="bg-gradient-to-b from-white via-[#c0c0c0] to-[#6b6b6d] bg-clip-text text-transparent inline-block"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5, duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
+              >
+                Engineered into silicon.
+              </motion.span>
             </motion.h1>
 
+            {/* Subheadline with fade */}
             <motion.p
               variants={fadeUp}
               className="text-[clamp(18px,1.6vw,24px)] text-[#86868b] tracking-[2px]"
             >
-              From the atom up. From inception forward.
+              <AnimatedWords text="From the atom up. From inception forward." />
             </motion.p>
 
+            {/* Description with staggered reveal */}
             <motion.p
               variants={fadeUp}
               className="text-[clamp(16px,1.4vw,20px)] text-[#a1a1a6] max-w-[1300px] mx-auto leading-relaxed"
@@ -144,30 +331,60 @@ export default function Home() {
               it&apos;s intrinsic to everything we build, from a cognitive learning and a design automation to next-gen energy chips.
             </motion.p>
 
+            {/* CTA buttons with enhanced hover effects */}
             <motion.div
               variants={fadeUp}
               className="flex flex-wrap gap-5 justify-center pt-6 pb-4"
             >
-              <Link
-                href="/products"
-                className="px-10 py-4 text-[17px] font-medium rounded-full bg-[#007aff] text-white shadow-[0_4px_20px_rgba(0,122,255,0.3)] hover:bg-[#0051d5] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,122,255,0.4)] transition-all"
+              <motion.div
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Discover The Triad
-              </Link>
-              <Link
-                href="/contact"
-                className="px-10 py-4 text-[17px] font-medium rounded-full bg-white/[0.08] text-[#007aff] border border-[#007aff]/30 hover:bg-[#007aff]/15 hover:border-[#007aff]/60 hover:-translate-y-0.5 transition-all"
+                <Link
+                  href="/products"
+                  className="relative px-10 py-4 text-[17px] font-medium rounded-full bg-[#007aff] text-white overflow-hidden group inline-block"
+                >
+                  {/* Shimmer effect */}
+                  <motion.span
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full"
+                    animate={{ x: ['calc(-100%)', 'calc(200%)'] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                  />
+                  <span className="relative z-10">Discover The Triad</span>
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Collaborate with Us
-              </Link>
+                <Link
+                  href="/contact"
+                  className="px-10 py-4 text-[17px] font-medium rounded-full bg-white/[0.05] text-[#007aff] border border-[#007aff]/30 hover:bg-[#007aff]/10 hover:border-[#007aff]/50 transition-all inline-block backdrop-blur-sm"
+                >
+                  Collaborate with Us
+                </Link>
+              </motion.div>
             </motion.div>
 
-            <motion.p
+            {/* Tagline with glow effect */}
+            <motion.div
               variants={fadeUp}
-              className="text-[clamp(18px,2vw,26px)] text-[#007aff] font-semibold italic pt-2"
+              className="pt-2"
             >
-              The future. Built now.
-            </motion.p>
+              <motion.p
+                className="text-[clamp(18px,2vw,26px)] text-[#007aff] font-semibold italic"
+                animate={{
+                  textShadow: [
+                    '0 0 20px rgba(0,122,255,0.3)',
+                    '0 0 40px rgba(0,122,255,0.5)',
+                    '0 0 20px rgba(0,122,255,0.3)'
+                  ]
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                The future. Built now.
+              </motion.p>
+            </motion.div>
           </motion.div>
         </div>
 

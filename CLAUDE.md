@@ -3,7 +3,7 @@
 ## Project Overview
 **Company**: Celton Semiconductors
 **Tagline**: "Architecting Intelligence"
-**Version**: v0.0.4
+**Version**: v0.0.5
 **Location**: `D:\users\r!\celton-website`
 
 ## Brand Identity
@@ -112,7 +112,17 @@ Access at: http://localhost:3000
 
 ## Changelog
 
-### v0.0.4 (Current)
+### v0.0.5 (Current)
+- Added Apple-style animations to landing page:
+  - Navigation slide-down with staggered link reveals
+  - Mouse-tracking parallax on background gradients and orbs
+  - Word-by-word 3D flip animation on subheadline
+  - Shimmer effect on primary CTA button
+  - Pulsing glow on tagline
+  - Floating particles with glow effects
+  - Enhanced blur-reveal transitions
+
+### v0.0.4
 - Updated logo from `logo-celton.png` to `celton-logo.png` across all pages
 - Added `vercel.json` configuration for deployment
 - Deployed to Vercel production: https://celton-website.vercel.app
@@ -147,4 +157,4 @@ Access at: http://localhost:3000
 
 ---
 
-**Last Updated**: v0.0.4
+**Last Updated**: v0.0.5
