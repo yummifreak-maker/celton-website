@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -19,6 +20,7 @@ const stagger = {
 }
 
 export default function Contact() {
+  const searchParams = useSearchParams()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,6 +28,14 @@ export default function Contact() {
     interest: '',
     message: ''
   })
+
+  // Pre-fill interest from URL query parameter
+  useEffect(() => {
+    const interest = searchParams.get('interest')
+    if (interest) {
+      setFormData(prev => ({ ...prev, interest: decodeURIComponent(interest) }))
+    }
+  }, [searchParams])
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
 
