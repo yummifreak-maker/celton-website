@@ -27,7 +27,7 @@ export default function Home() {
           <div className="flex items-center justify-between h-[72px]">
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo-celton.png"
+                src="/celton-logo.png"
                 alt="Celton Semiconductors"
                 width={280}
                 height={84}

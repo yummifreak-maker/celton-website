@@ -1,8 +1,17 @@
 # Celton Website Development Plan
 
-## Version: v0.0.1
+## Version: v0.0.4
 
-## Project Status: Initial Release
+## Project Status: Logo Update & Vercel Deployment
+
+### Completed (v0.0.4)
+- [x] Updated logo from `logo-celton.png` to `celton-logo.png` across all pages
+- [x] Added `vercel.json` configuration for deployment
+- [x] Deployed to Vercel production: https://celton-website.vercel.app
+
+### Completed (v0.0.3)
+- [x] Removed About page completely
+- [x] Updated Careers page labels (DeepTech → AI & Intelligence, Experiential Learning → Product Design)
 
 ### Completed (v0.0.1)
 - [x] Updated logo to new red brain/circuit design with "Architecting Intelligence"
@@ -72,7 +81,7 @@ celton-website/
 │   │   └── globals.css       # Global styles
 │   └── components/           # Reusable components (future)
 ├── public/
-│   ├── logo-celton.png       # Company logo (red brain/circuit)
+│   ├── celton-logo.png       # Company logo
 │   ├── logo-cognorus.png     # Cognorus product logo
 │   ├── logo-nexarus.png      # Nexarus product logo
 │   └── logo-helorus.png      # Helorus product logo

@@ -3,7 +3,7 @@
 ## Project Overview
 **Company**: Celton Semiconductors
 **Tagline**: "Architecting Intelligence"
-**Version**: v0.0.1
+**Version**: v0.0.4
 **Location**: `D:\users\r!\celton-website`
 
 ## Brand Identity
@@ -105,9 +105,23 @@ Access at: http://localhost:3000
 **Repository**: https://github.com/yummifreak-maker/celton-website
 **Branch**: v0.0.7a
 
+## Deployment
+
+**Live URL**: https://celton-website.vercel.app
+**Platform**: Vercel
+
 ## Changelog
 
-### v0.0.1 (Current)
+### v0.0.4 (Current)
+- Updated logo from `logo-celton.png` to `celton-logo.png` across all pages
+- Added `vercel.json` configuration for deployment
+- Deployed to Vercel production: https://celton-website.vercel.app
+
+### v0.0.3
+- Removed About page completely
+- Updated Careers page labels (DeepTech → AI & Intelligence, Experiential Learning → Product Design)
+
+### v0.0.1
 - Updated logo to new red brain/circuit design with "Architecting Intelligence"
 - Changed nav "The Celton Triad" to "Innovations"
 - Updated hero text: "Introducing the Celton Triad" (normal case, not uppercase)
@@ -133,4 +147,4 @@ Access at: http://localhost:3000
 
 ---
 
-**Last Updated**: v0.0.1
+**Last Updated**: v0.0.4
