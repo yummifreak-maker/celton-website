@@ -6,8 +6,8 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 
-// Dynamic import for the 3D chip scene
-const ChipScene = dynamic(() => import('@/components/ChipScene'), {
+// Dynamic import for the Neural Network background
+const NeuralNetwork = dynamic(() => import('@/components/backgrounds/NeuralNetwork'), {
   ssr: false,
   loading: () => null,
 })
@@ -176,14 +176,14 @@ export default function Home() {
 
       {/* Hero Section - Full Height, No Scroll */}
       <section className="h-screen flex flex-col justify-center items-center text-center px-[4%] relative overflow-hidden">
-        {/* 3D Chip Scene Background */}
+        {/* Neural Network Background */}
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.5 }}
         >
-          <ChipScene />
+          <NeuralNetwork />
         </motion.div>
 
         {/* Animated Background with Parallax */}
