@@ -283,7 +283,7 @@ export default function Home() {
                 className="text-[#007aff] text-[clamp(14px,1.2vw,16px)] tracking-[4px] font-semibold px-6 py-2 rounded-full border border-[#007aff]/20 bg-[#007aff]/5 backdrop-blur-sm"
                 whileHover={{ scale: 1.02, borderColor: 'rgba(0,122,255,0.4)' }}
               >
-                Introducing the Celton Triad
+                Introducing the Celton Triad™
               </motion.p>
             </motion.div>
 

@@ -125,20 +125,20 @@ export default function Terms() {
             <motion.div variants={fadeUp} className="mb-8">
               <h2 className="text-lg font-semibold text-celton-light mb-2">Our Platforms</h2>
               <p className="text-celton-silver leading-relaxed mb-3 text-xs">
-                Celton Semiconductors offers three distinct platforms under The Celton Triad:
+                Celton Semiconductors offers three distinct platforms under The Celton Triad™:
               </p>
               <ul className="space-y-2 text-celton-silver text-xs">
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-celton-accent mt-2 flex-shrink-0" />
-                  <span><strong className="text-celton-light">Cognorus.ai:</strong> AI-powered semiconductor learning platform</span>
+                  <span><strong className="text-celton-light">Cognorus.ai™:</strong> AI-powered semiconductor learning platform</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-celton-accent mt-2 flex-shrink-0" />
-                  <span><strong className="text-celton-light">Nexarus.ai:</strong> Intelligent chip design platform</span>
+                  <span><strong className="text-celton-light">Nexarus.ai™:</strong> Intelligent chip design platform</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-celton-accent mt-2 flex-shrink-0" />
-                  <span><strong className="text-celton-light">Helorus.ai:</strong> Next-generation chip development solutions</span>
+                  <span><strong className="text-celton-light">Helorus.ai™:</strong> Next-generation chip development solutions</span>
                 </li>
               </ul>
               <p className="text-celton-silver leading-relaxed mt-3 text-xs">

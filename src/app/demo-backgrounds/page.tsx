@@ -69,7 +69,7 @@ export default function DemoBackgrounds() {
           transition={{ delay: 0.3 }}
         >
           <p className="text-[#007aff] text-sm tracking-[4px] font-semibold mb-4 px-6 py-2 rounded-full border border-[#007aff]/20 bg-[#007aff]/5 backdrop-blur-sm inline-block">
-            Introducing the Celton Triad
+            Introducing the Celton Triad™
           </p>
           <h1 className="text-5xl md:text-7xl font-extrabold mb-4">
             <span className="bg-gradient-to-b from-white via-white to-[#8b8b8d] bg-clip-text text-transparent">

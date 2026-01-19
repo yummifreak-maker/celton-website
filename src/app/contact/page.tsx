@@ -115,9 +115,9 @@ ${formData.message}`
             required
           >
             <option value="" className="bg-celton-dark">Select an option</option>
-            <option value="Cognorus.ai - Learning Platform" className="bg-celton-dark">Cognorus.ai - Learning Platform</option>
-            <option value="Nexarus.ai - Design Platform" className="bg-celton-dark">Nexarus.ai - Design Platform</option>
-            <option value="Helorus.ai - Chip Development" className="bg-celton-dark">Helorus.ai - Chip Development</option>
+            <option value="Cognorus.ai - Learning Platform" className="bg-celton-dark">Cognorus.ai™ - Learning Platform</option>
+            <option value="Nexarus.ai - Design Platform" className="bg-celton-dark">Nexarus.ai™ - Design Platform</option>
+            <option value="Helorus.ai - Chip Development" className="bg-celton-dark">Helorus.ai™ - Chip Development</option>
             <option value="Partnership Opportunities" className="bg-celton-dark">Partnership Opportunities</option>
             <option value="Career Opportunities" className="bg-celton-dark">Career Opportunities</option>
             <option value="Attending Events" className="bg-celton-dark">Attending Events</option>

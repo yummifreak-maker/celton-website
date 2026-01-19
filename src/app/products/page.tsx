@@ -64,7 +64,7 @@ export default function Products() {
           variants={stagger}
         >
           <motion.p variants={fadeUp} className="text-[14px] text-[#86868b] uppercase tracking-[3px] font-semibold mb-5">
-            The Celton Triad
+            The Celton Triad™
           </motion.p>
           <motion.h1 variants={fadeUp} className="text-[clamp(38px,5vw,68px)] font-bold tracking-[-2px] leading-[1.1] mb-8">
             Three platforms.
@@ -111,8 +111,8 @@ export default function Products() {
                 >
                   <Image src="/logo-cognorus.png" alt="Cognorus.ai" width={180} height={90} className="h-[80px] w-auto" />
                 </motion.div>
-                <h3 className="text-[28px] font-bold text-[#007aff] mb-1">Cognorus.ai</h3>
-                <p className="text-[12px] text-[#86868b] uppercase tracking-[2px] mb-4">Adaptive • Yours</p>
+                <h3 className="text-[28px] font-bold text-[#007aff] mb-1">Cognorus.ai™</h3>
+                <p className="text-[12px] text-[#86868b] uppercase tracking-[2px] mb-4">Adaptive • Yours™</p>
                 <p className="text-[14px] text-[#d2d2d7] leading-relaxed mb-3">
                   Scalable cognitive learning ecosystem that transforms semiconductor education through personalized curricula, experiential learning, and digital twins.
                 </p>
@@ -142,8 +142,8 @@ export default function Products() {
                 >
                   <Image src="/logo-nexarus.png" alt="Nexarus.ai" width={220} height={110} className="h-[100px] w-auto" />
                 </motion.div>
-                <h3 className="text-[28px] font-bold text-[#007aff] mb-1">Nexarus.ai</h3>
-                <p className="text-[12px] text-[#86868b] uppercase tracking-[2px] mb-4">Prompt-to-Silicon</p>
+                <h3 className="text-[28px] font-bold text-[#007aff] mb-1">Nexarus.ai™</h3>
+                <p className="text-[12px] text-[#86868b] uppercase tracking-[2px] mb-4">Prompt-to-Silicon™</p>
                 <p className="text-[14px] text-[#d2d2d7] leading-relaxed mb-3">
                   Revolutionary design platform that embeds AI into chip workflows—from architecture to GDS—optimizing efficiency, reliability, and performance at every stage.
                 </p>
@@ -173,8 +173,8 @@ export default function Products() {
                 >
                   <Image src="/logo-helorus.png" alt="Helorus.ai" width={180} height={90} className="h-[80px] w-auto" />
                 </motion.div>
-                <h3 className="text-[28px] font-bold text-[#007aff] mb-1">Helorus.ai</h3>
-                <p className="text-[12px] text-[#86868b] uppercase tracking-[2px] mb-4">Power • Perfected</p>
+                <h3 className="text-[28px] font-bold text-[#007aff] mb-1">Helorus.ai™</h3>
+                <p className="text-[12px] text-[#86868b] uppercase tracking-[2px] mb-4">Power • Perfected™</p>
                 <p className="text-[14px] text-[#d2d2d7] leading-relaxed mb-3">
                   Next-generation semiconductor platform revolutionizing power electronics through advanced performance metrics and energy-efficient chip solutions.
                 </p>
@@ -210,7 +210,7 @@ export default function Products() {
               <Image src="/logo-cognorus.png" alt="Cognorus.ai" width={140} height={42} className="h-10 w-auto" />
             </motion.div>
             <motion.span variants={fadeUp} className="inline-block text-[28px] font-bold text-[#007aff] mb-2">
-              Cognorus.ai
+              Cognorus.ai™
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-[clamp(32px,4vw,52px)] font-bold tracking-[-2px] text-[#f5f5f7] mb-4">
               Learn chip design.
@@ -313,7 +313,7 @@ export default function Products() {
                 AUTOMATED DESIGN ENGINE
               </p>
               <p className="text-[13px] text-[#86868b] mt-3 text-center max-w-[280px]">
-                Prompt-to-GDS chip design
+                Prompt-to-GDS™ chip design
               </p>
             </div>
           </motion.div>
@@ -329,7 +329,7 @@ export default function Products() {
               <Image src="/logo-nexarus.png" alt="Nexarus.ai" width={140} height={42} className="h-10 w-auto" />
             </motion.div>
             <motion.span variants={fadeUp} className="inline-block text-[28px] font-bold text-[#007aff] mb-2">
-              Nexarus.ai
+              Nexarus.ai™
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-[clamp(32px,4vw,52px)] font-bold tracking-[-2px] text-[#f5f5f7] mb-4">
               From Prompt
@@ -341,7 +341,7 @@ export default function Products() {
             </motion.p>
             <motion.ul variants={fadeUp} className="mb-5">
               {[
-                'Prompt-to-chip design automation',
+                'Prompt-to-chip™ design automation',
                 'Complete RTL generation and verification',
                 'Automated physical design workflows',
                 'Real-time optimization and tweaking',
@@ -379,7 +379,7 @@ export default function Products() {
               <Image src="/logo-helorus.png" alt="Helorus.ai" width={140} height={42} className="h-10 w-auto" />
             </motion.div>
             <motion.span variants={fadeUp} className="inline-block text-[28px] font-bold text-[#007aff] mb-2">
-              Helorus.ai
+              Helorus.ai™
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-[clamp(32px,4vw,52px)] font-bold tracking-[-2px] text-[#f5f5f7] mb-4">
               Silicon that
@@ -438,7 +438,7 @@ export default function Products() {
                 <Image src="/logo-helorus.png" alt="Helorus.ai" width={480} height={240} className="h-[240px] w-auto" />
               </motion.div>
               <p className="text-[28px] font-bold text-[#007aff]/30 text-center">
-                POWER PERFECTED
+                POWER PERFECTED™
               </p>
               <p className="text-[13px] text-[#86868b] mt-3 text-center max-w-[320px]">
                 Next-gen energy-efficient silicon for aerospace, automotive, and power electronics
@@ -480,9 +480,9 @@ export default function Products() {
             <div>
               <p className="text-[#f5f5f7] font-medium mb-4">The Triad</p>
               <ul className="space-y-3">
-                <li><Link href="/products#cognorus" className="text-[#86868b] hover:text-[#007aff] transition-colors">Cognorus.ai</Link></li>
-                <li><Link href="/products#nexarus" className="text-[#86868b] hover:text-[#007aff] transition-colors">Nexarus.ai</Link></li>
-                <li><Link href="/products#helorus" className="text-[#86868b] hover:text-[#007aff] transition-colors">Helorus.ai</Link></li>
+                <li><Link href="/products#cognorus" className="text-[#86868b] hover:text-[#007aff] transition-colors">Cognorus.ai™</Link></li>
+                <li><Link href="/products#nexarus" className="text-[#86868b] hover:text-[#007aff] transition-colors">Nexarus.ai™</Link></li>
+                <li><Link href="/products#helorus" className="text-[#86868b] hover:text-[#007aff] transition-colors">Helorus.ai™</Link></li>
               </ul>
             </div>
             <div>
