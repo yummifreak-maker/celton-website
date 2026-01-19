@@ -314,9 +314,9 @@ export default function Careers() {
               Exceptional talent always has a home here. If you're ready to redefine silicon, reach out.
             </motion.p>
             <motion.div variants={fadeUp}>
-              <a href="mailto:info@celtonsemi.com?subject=Career Inquiry&body=Hi Celton Team,%0D%0A%0D%0AI am interested in exploring career opportunities at Celton Semiconductors.%0D%0A%0D%0A[Please include a brief introduction about yourself]" className="btn-primary">
+              <Link href="/contact?interest=Career+Opportunities" className="btn-primary">
                 Get in Touch
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
