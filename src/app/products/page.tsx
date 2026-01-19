@@ -218,7 +218,7 @@ export default function Products() {
               Your way.
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[16px] text-[#a1a1a6] leading-[1.6] mb-5">
-              Not everyone learns the same way. Cognorus.ai generates personalized learning paths based on your background, interest, learning style, goals, and objectives - from absolute basics to advanced chip architectures.
+              Not everyone learns the same way. Cognorus.ai™ generates personalized learning paths based on your background, interest, learning style, goals, and objectives - from absolute basics to advanced chip architectures.
             </motion.p>
             <motion.ul variants={fadeUp} className="mb-5">
               {[
@@ -334,10 +334,10 @@ export default function Products() {
             <motion.h2 variants={fadeUp} className="text-[clamp(32px,4vw,52px)] font-bold tracking-[-2px] text-[#f5f5f7] mb-4">
               From Prompt
               <br />
-              to Silicon.
+              to Silicon.™
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[16px] text-[#a1a1a6] leading-[1.6] mb-5">
-              Describe your chip idea as module levels. Nexarus.ai handles the rest—architecture, RTL, verification, physical design, and GDS. Iterate, optimize, and perfect at any stage.
+              Describe your chip idea as module levels. Nexarus.ai™ handles the rest—architecture, RTL, verification, physical design, and GDS. Iterate, optimize, and perfect at any stage.
             </motion.p>
             <motion.ul variants={fadeUp} className="mb-5">
               {[
