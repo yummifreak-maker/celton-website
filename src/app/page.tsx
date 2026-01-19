@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { NeuronBackground } from '../components/NeuronBackground'
 
 // Apple-style animation variants
 const fadeUp = {
@@ -190,56 +191,8 @@ export default function Home() {
           <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-purple-600/10 blur-[100px]" />
         </motion.div>
 
-        {/* Circuit Lines Animation - Enhanced */}
-        <div className="absolute inset-0 opacity-[0.04] z-[2]">
-          <motion.div
-            className="absolute top-[20%] left-0 w-full h-px bg-gradient-to-r from-transparent via-[#007aff] to-transparent"
-            animate={{ x: ['-100%', '100%'], opacity: [0, 1, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-          />
-          <motion.div
-            className="absolute top-[50%] left-0 w-full h-px bg-gradient-to-r from-transparent via-[#007aff] to-transparent"
-            animate={{ x: ['100%', '-100%'], opacity: [0, 1, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'linear', delay: 1 }}
-          />
-          <motion.div
-            className="absolute top-[75%] left-0 w-full h-px bg-gradient-to-r from-transparent via-[#007aff] to-transparent"
-            animate={{ x: ['-100%', '100%'], opacity: [0, 1, 0] }}
-            transition={{ duration: 7, repeat: Infinity, ease: 'linear', delay: 2 }}
-          />
-        </div>
-
-        {/* Floating Particles - Apple style with glow */}
-        {[
-          { top: '25%', left: '15%', delay: 0, size: 3 },
-          { top: '65%', left: '75%', delay: 1.5, size: 2 },
-          { top: '35%', left: '85%', delay: 3, size: 4 },
-          { top: '75%', left: '25%', delay: 2, size: 2 },
-          { top: '45%', left: '10%', delay: 4, size: 3 },
-        ].map((particle, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-[#007aff]"
-            style={{
-              top: particle.top,
-              left: particle.left,
-              width: particle.size,
-              height: particle.size,
-              boxShadow: '0 0 10px rgba(0,122,255,0.8), 0 0 20px rgba(0,122,255,0.4)'
-            }}
-            animate={{
-              y: [0, -40, 0],
-              opacity: [0, 0.8, 0],
-              scale: [0.5, 1.2, 0.5]
-            }}
-            transition={{
-              duration: 5 + i,
-              repeat: Infinity,
-              delay: particle.delay,
-              ease: 'easeInOut'
-            }}
-          />
-        ))}
+        {/* Neuron Network Animation */}
+        <NeuronBackground />
 
         {/* Pulsing Orbs with Parallax */}
         <motion.div
