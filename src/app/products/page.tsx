@@ -140,7 +140,7 @@ export default function Products() {
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
                 >
-                  <Image src="/logo-nexarus.png" alt="Nexarus.ai" width={180} height={90} className="h-[80px] w-auto" />
+                  <Image src="/logo-nexarus.png" alt="Nexarus.ai" width={220} height={110} className="h-[100px] w-auto" />
                 </motion.div>
                 <h3 className="text-[28px] font-bold text-[#007aff] mb-1">Nexarus.ai</h3>
                 <p className="text-[12px] text-[#86868b] uppercase tracking-[2px] mb-4">Prompt-to-Silicon</p>
@@ -307,7 +307,7 @@ export default function Products() {
                 transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
                 className="mb-6"
               >
-                <Image src="/logo-nexarus.png" alt="Nexarus.ai" width={480} height={240} className="h-[240px] w-auto" />
+                <Image src="/logo-nexarus.png" alt="Nexarus.ai" width={560} height={280} className="h-[280px] w-auto" />
               </motion.div>
               <p className="text-[28px] font-bold text-[#007aff]/30 text-center">
                 AUTOMATED DESIGN ENGINE
