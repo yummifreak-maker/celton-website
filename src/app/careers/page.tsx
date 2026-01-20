@@ -116,7 +116,7 @@ export default function Careers() {
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#007aff]" />
               </Link>
               <Link href="/contact" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
-                Contact
+                Get in Touch
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
             </div>
@@ -160,7 +160,7 @@ export default function Careers() {
             { href: '/', label: 'Home' },
             { href: '/products', label: 'Innovations' },
             { href: '/careers', label: 'Careers' },
-            { href: '/contact', label: 'Contact' }
+            { href: '/contact', label: 'Get in Touch' }
           ].map((item) => (
             <Link
               key={item.href}

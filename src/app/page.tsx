@@ -143,7 +143,7 @@ export default function Home() {
               {[
                 { href: '/products', label: 'Innovations' },
                 { href: '/careers', label: 'Careers' },
-                { href: '/contact', label: 'Contact' }
+                { href: '/contact', label: 'Get in Touch' }
               ].map((item, i) => (
                 <motion.div
                   key={item.href}
@@ -205,7 +205,7 @@ export default function Home() {
           {[
             { href: '/products', label: 'Innovations' },
             { href: '/careers', label: 'Careers' },
-            { href: '/contact', label: 'Contact' }
+            { href: '/contact', label: 'Get in Touch' }
           ].map((item) => (
             <Link
               key={item.href}

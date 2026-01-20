@@ -92,9 +92,8 @@ Access at: http://localhost:3000
 ### Navigation
 - Logo (Celton with brain/circuit icon)
 - Innovations (links to /products)
-- About
 - Careers
-- Contact
+- Get in Touch (links to /contact)
 
 ### Product Positioning
 - Cognorus: Learn semiconductors the way you think
@@ -127,6 +126,7 @@ Access at: http://localhost:3000
 - **Collaborate with Us Button**: Now routes to `/contact?interest=Partnership Opportunities`
 - **Responsive Sizing**: Logo `h-10 md:h-16`, headlines `clamp(32px, 8vw, 110px)`
 - **Static Export**: Added `output: 'export'` and `trailingSlash: true` to next.config.js
+- **Navigation Rename**: Changed "Contact" to "Get in Touch" across all pages
 
 ### v0.0.9f
 - **Trademark Symbols**: Added ™ to all brand names across all pages

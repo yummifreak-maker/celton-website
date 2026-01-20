@@ -51,7 +51,7 @@ export default function Products() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
               <Link href="/contact" className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-sm relative group">
-                Contact
+                Get in Touch
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
             </div>
@@ -95,7 +95,7 @@ export default function Products() {
             { href: '/', label: 'Home' },
             { href: '/products', label: 'Innovations' },
             { href: '/careers', label: 'Careers' },
-            { href: '/contact', label: 'Contact' }
+            { href: '/contact', label: 'Get in Touch' }
           ].map((item) => (
             <Link
               key={item.href}
@@ -541,7 +541,7 @@ export default function Products() {
               <ul className="space-y-3">
                 <li><Link href="/about" className="text-[#86868b] hover:text-[#007aff] transition-colors">About</Link></li>
                 <li><Link href="/careers" className="text-[#86868b] hover:text-[#007aff] transition-colors">Careers</Link></li>
-                <li><Link href="/contact" className="text-[#86868b] hover:text-[#007aff] transition-colors">Contact</Link></li>
+                <li><Link href="/contact" className="text-[#86868b] hover:text-[#007aff] transition-colors">Get in Touch</Link></li>
               </ul>
             </div>
             <div>

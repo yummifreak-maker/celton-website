@@ -28,6 +28,9 @@
 - [x] Added static export configuration
   - `output: 'export'` in next.config.js
   - `trailingSlash: true` for clean URLs
+- [x] Changed "Contact" to "Get in Touch" in navigation
+  - Updated on all pages: Landing, Products, Careers, Contact, Terms, Privacy
+  - Applies to both desktop and mobile menus
 
 ### Completed (v0.0.9f)
 - [x] Added trademark (™) symbols to all brand names
