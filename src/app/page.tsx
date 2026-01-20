@@ -362,7 +362,7 @@ export default function Home() {
                 whileTap={{ scale: 0.98 }}
               >
                 <Link
-                  href="/contact"
+                  href="/contact?interest=Partnership Opportunities"
                   className="px-10 py-4 text-[17px] font-medium rounded-full bg-white/[0.05] text-[#007aff] border border-[#007aff]/30 hover:bg-[#007aff]/10 hover:border-[#007aff]/50 transition-all inline-block backdrop-blur-sm"
                 >
                   Collaborate with Us
