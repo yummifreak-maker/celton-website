@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -84,8 +85,10 @@ const openRoles = [
 ]
 
 export default function Careers() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   return (
-    <main className="min-h-screen bg-celton-black">
+    <main className="min-h-screen bg-celton-black overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-[1400px] mx-auto px-[6%]">
@@ -96,7 +99,7 @@ export default function Careers() {
                 alt="Celton Semiconductors"
                 width={280}
                 height={84}
-                className="h-16 w-auto"
+                className="h-10 md:h-16 w-auto"
               />
             </Link>
             <div className="hidden md:flex items-center gap-11">
@@ -117,9 +120,59 @@ export default function Careers() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#007aff] transition-all group-hover:w-full" />
               </Link>
             </div>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <motion.span
+                className="w-6 h-0.5 bg-white rounded-full"
+                animate={{ rotate: mobileMenuOpen ? 45 : 0, y: mobileMenuOpen ? 8 : 0 }}
+              />
+              <motion.span
+                className="w-6 h-0.5 bg-white rounded-full"
+                animate={{ opacity: mobileMenuOpen ? 0 : 1 }}
+              />
+              <motion.span
+                className="w-6 h-0.5 bg-white rounded-full"
+                animate={{ rotate: mobileMenuOpen ? -45 : 0, y: mobileMenuOpen ? -8 : 0 }}
+              />
+            </button>
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Dropdown */}
+      <motion.div
+        className="fixed top-[72px] left-0 right-0 z-40 bg-black/95 backdrop-blur-xl border-b border-white/10 md:hidden"
+        initial={{ height: 0, opacity: 0 }}
+        animate={{
+          height: mobileMenuOpen ? 'auto' : 0,
+          opacity: mobileMenuOpen ? 1 : 0
+        }}
+        transition={{ duration: 0.3 }}
+        style={{ overflow: 'hidden' }}
+      >
+        <div className="flex flex-col py-4 px-6 gap-4">
+          {[
+            { href: '/', label: 'Home' },
+            { href: '/products', label: 'Innovations' },
+            { href: '/careers', label: 'Careers' },
+            { href: '/contact', label: 'Contact' }
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-lg py-2 border-b border-white/10"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </motion.div>
 
       {/* Hero */}
       <section className="pt-28 pb-6 relative">
