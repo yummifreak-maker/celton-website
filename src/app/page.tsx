@@ -98,6 +98,7 @@ const AnimatedWords = ({ text, className }: { text: string; className?: string }
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isLoaded, setIsLoaded] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // Mouse tracking for parallax
   useEffect(() => {
@@ -112,7 +113,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="h-screen bg-black overflow-hidden">
+    <main className="min-h-screen bg-black overflow-x-hidden">
       {/* Navigation with fade-in animation */}
       <motion.nav
         className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl border-b border-white/5"
@@ -133,10 +134,11 @@ export default function Home() {
                   alt="Celton Semiconductors"
                   width={280}
                   height={84}
-                  className="h-16 w-auto"
+                  className="h-10 md:h-16 w-auto"
                 />
               </Link>
             </motion.div>
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-11">
               {[
                 { href: '/products', label: 'Innovations' },
@@ -164,12 +166,61 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <motion.span
+                className="w-6 h-0.5 bg-white rounded-full"
+                animate={{ rotate: mobileMenuOpen ? 45 : 0, y: mobileMenuOpen ? 8 : 0 }}
+              />
+              <motion.span
+                className="w-6 h-0.5 bg-white rounded-full"
+                animate={{ opacity: mobileMenuOpen ? 0 : 1 }}
+              />
+              <motion.span
+                className="w-6 h-0.5 bg-white rounded-full"
+                animate={{ rotate: mobileMenuOpen ? -45 : 0, y: mobileMenuOpen ? -8 : 0 }}
+              />
+            </button>
           </div>
         </div>
       </motion.nav>
 
+      {/* Mobile Menu Dropdown */}
+      <motion.div
+        className="fixed top-[72px] left-0 right-0 z-40 bg-black/95 backdrop-blur-xl border-b border-white/10 md:hidden"
+        initial={{ height: 0, opacity: 0 }}
+        animate={{
+          height: mobileMenuOpen ? 'auto' : 0,
+          opacity: mobileMenuOpen ? 1 : 0
+        }}
+        transition={{ duration: 0.3 }}
+        style={{ overflow: 'hidden' }}
+      >
+        <div className="flex flex-col py-4 px-6 gap-4">
+          {[
+            { href: '/products', label: 'Innovations' },
+            { href: '/careers', label: 'Careers' },
+            { href: '/contact', label: 'Contact' }
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-[#f5f5f7] hover:text-[#007aff] transition-all text-lg py-2 border-b border-white/10"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </motion.div>
+
       {/* Hero Section - Full Height, No Scroll */}
-      <section className="h-screen flex flex-col justify-center items-center text-center px-[4%] relative overflow-hidden">
+      <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 md:px-[4%] pt-20 pb-24 md:pt-0 md:pb-0 relative overflow-hidden">
         {/* Animated Background with Parallax */}
         <motion.div
           className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(0,122,255,0.15),transparent),radial-gradient(ellipse_60%_40%_at_80%_60%,rgba(147,51,234,0.1),transparent)] z-[1]"
@@ -243,7 +294,7 @@ export default function Home() {
             {/* Main headline with character animation */}
             <motion.h1
               variants={fadeUp}
-              className="text-[clamp(52px,8vw,110px)] font-extrabold leading-[1.08] tracking-[1px]"
+              className="text-[clamp(32px,8vw,110px)] font-extrabold leading-[1.08] tracking-[1px]"
             >
               <motion.span
                 className="bg-gradient-to-b from-white via-white to-[#8b8b8d] bg-clip-text text-transparent inline-block"
