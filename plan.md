@@ -19,6 +19,9 @@
 - [x] Fixed "Start Learning" button routing
   - Now links to `/contact?interest=Cognorus.ai - Learning Platform`
   - Pre-selects Cognorus.ai in the interest dropdown
+- [x] Fixed "Collaborate with Us" button routing
+  - Now links to `/contact?interest=Partnership Opportunities`
+  - Pre-selects Partnership Opportunities in the interest dropdown
 - [x] Responsive text and logo sizing
   - Logo: `h-10 md:h-16` (smaller on mobile)
   - Headlines: `clamp(32px, 8vw, 110px)` minimum reduced for mobile

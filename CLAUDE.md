@@ -124,6 +124,7 @@ Access at: http://localhost:3000
   - Applied to: Landing, Products, Contact, Careers pages
 - **Contact Page Fix**: Changed `h-screen overflow-hidden` to `min-h-screen overflow-x-hidden`
 - **Start Learning Button**: Now routes to `/contact?interest=Cognorus.ai - Learning Platform`
+- **Collaborate with Us Button**: Now routes to `/contact?interest=Partnership Opportunities`
 - **Responsive Sizing**: Logo `h-10 md:h-16`, headlines `clamp(32px, 8vw, 110px)`
 - **Static Export**: Added `output: 'export'` and `trailingSlash: true` to next.config.js
 
