@@ -1,8 +1,30 @@
 # Celton Website Development Plan
 
-## Version: v0.0.9f
+## Version: v0.0.10
 
-## Project Status: Trademark & Neuron Background
+## Project Status: Mobile Responsiveness & Domain Migration
+
+### Completed (v0.0.10)
+- [x] Domain migration from GoDaddy to Vercel
+  - Pointed celtonsemi.com and www.celtonsemi.com to Vercel
+  - A record: @ → 216.198.79.1
+  - CNAME: www → Vercel DNS
+  - Backed up original WordPress site via UpdraftPlus
+- [x] Mobile hamburger menu on all pages
+  - Animated hamburger icon with Framer Motion
+  - Slide-down mobile menu dropdown
+  - Added to: Landing, Products, Contact, Careers pages
+- [x] Fixed Contact page scrolling on mobile
+  - Changed from `h-screen overflow-hidden` to `min-h-screen overflow-x-hidden`
+- [x] Fixed "Start Learning" button routing
+  - Now links to `/contact?interest=Cognorus.ai - Learning Platform`
+  - Pre-selects Cognorus.ai in the interest dropdown
+- [x] Responsive text and logo sizing
+  - Logo: `h-10 md:h-16` (smaller on mobile)
+  - Headlines: `clamp(32px, 8vw, 110px)` minimum reduced for mobile
+- [x] Added static export configuration
+  - `output: 'export'` in next.config.js
+  - `trailingSlash: true` for clean URLs
 
 ### Completed (v0.0.9f)
 - [x] Added trademark (™) symbols to all brand names

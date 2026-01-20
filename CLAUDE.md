@@ -3,8 +3,9 @@
 ## Project Overview
 **Company**: Celton Semiconductors
 **Tagline**: "Architecting Intelligence"
-**Version**: v0.0.9f
+**Version**: v0.0.10
 **Location**: `D:\users\r!\celton-website`
+**Live URL**: https://www.celtonsemi.com (Vercel)
 
 ## Brand Identity
 
@@ -112,7 +113,21 @@ Access at: http://localhost:3000
 
 ## Changelog
 
-### v0.0.9f (Current)
+### v0.0.10 (Current)
+- **Domain Migration**: Pointed celtonsemi.com from GoDaddy to Vercel
+  - A record: @ → 216.198.79.1
+  - CNAME: www → Vercel DNS
+  - Original WordPress site backed up via UpdraftPlus
+- **Mobile Responsiveness**: Added hamburger menu to all pages
+  - Animated hamburger icon with Framer Motion
+  - Slide-down mobile menu dropdown
+  - Applied to: Landing, Products, Contact, Careers pages
+- **Contact Page Fix**: Changed `h-screen overflow-hidden` to `min-h-screen overflow-x-hidden`
+- **Start Learning Button**: Now routes to `/contact?interest=Cognorus.ai - Learning Platform`
+- **Responsive Sizing**: Logo `h-10 md:h-16`, headlines `clamp(32px, 8vw, 110px)`
+- **Static Export**: Added `output: 'export'` and `trailingSlash: true` to next.config.js
+
+### v0.0.9f
 - **Trademark Symbols**: Added ™ to all brand names across all pages
   - Celton Triad™, Cognorus.ai™, Nexarus.ai™, Helorus.ai™
   - Prompt-to-Silicon™, Prompt-to-GDS™, Prompt-to-chip™
@@ -173,4 +188,4 @@ Access at: http://localhost:3000
 
 ---
 
-**Last Updated**: v0.0.9f
+**Last Updated**: v0.0.10
